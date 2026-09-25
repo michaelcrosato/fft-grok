@@ -1,0 +1,22 @@
+{
+  "name": "the-zodiac-standard",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/inline-html.mjs",
+    "test": "vitest run",
+    "extract": "node scripts/extract-guides.mjs"
+  },
+  "dependencies": {
+    "phaser": "4.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "playwright": "^1.63.0",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.5",
+    "vitest": "^3.2.4"
+  }
+}

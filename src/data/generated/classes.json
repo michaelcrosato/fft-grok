@@ -1,0 +1,3627 @@
+[
+  {
+    "index": "01",
+    "name": "Squire",
+    "id": "squire-01",
+    "mul": {
+      "hp": 125,
+      "mp": 105,
+      "sp": 107,
+      "pa": 111,
+      "ma": 102
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 95,
+      "pa": 50,
+      "ma": 48
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Sword, Knife, Flail, Hat, Robe, Clothes, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "02",
+    "name": "Squire",
+    "id": "squire-02",
+    "mul": {
+      "hp": 125,
+      "mp": 105,
+      "sp": 107,
+      "pa": 111,
+      "ma": 102
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 95,
+      "pa": 50,
+      "ma": 48
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Sword, Knife, Flail, Armor, Hat, Helmet, Shield, Robe, Clothes, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "03",
+    "name": "Squire",
+    "id": "squire-03",
+    "mul": {
+      "hp": 125,
+      "mp": 105,
+      "sp": 107,
+      "pa": 111,
+      "ma": 102
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 95,
+      "pa": 50,
+      "ma": 48
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Sword, Knight Sword, Knife, Flail, Armor, Hat, Helmet, Shield, Robe,",
+    "innate": ""
+  },
+  {
+    "index": "04",
+    "name": "Squire",
+    "id": "squire-04",
+    "mul": {
+      "hp": 130,
+      "mp": 100,
+      "sp": 100,
+      "pa": 120,
+      "ma": 100
+    },
+    "c": {
+      "hp": 10,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 5,
+    "type": "Special",
+    "eq": "Sword, Knife, Flail, Hat, Robe, Clothes, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "05",
+    "name": "Holy Knight",
+    "id": "holy-knight-05",
+    "mul": {
+      "hp": 135,
+      "mp": 100,
+      "sp": 110,
+      "pa": 120,
+      "ma": 105
+    },
+    "c": {
+      "hp": 10,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Sword, Knife, Flail, Armor, Helmet, Shield, Robe, Clothes, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "06",
+    "name": "Arc Knight",
+    "id": "arc-knight-06",
+    "mul": {
+      "hp": 150,
+      "mp": 100,
+      "sp": 120,
+      "pa": 120,
+      "ma": 110
+    },
+    "c": {
+      "hp": 10,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 15,
+    "type": "Special",
+    "eq": "Sword, Knight Sword, Knife, Flail, Armor, Helmet, Shield, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "07",
+    "name": "Squire",
+    "id": "squire-07",
+    "mul": {
+      "hp": 120,
+      "mp": 100,
+      "sp": 100,
+      "pa": 110,
+      "ma": 100
+    },
+    "c": {
+      "hp": 10,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 15,
+    "type": "Special",
+    "eq": "Sword, Knife, Flail, Hat, Robe, Clothes, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "08",
+    "name": "Arc Knight",
+    "id": "arc-knight-08",
+    "mul": {
+      "hp": 168,
+      "mp": 80,
+      "sp": 100,
+      "pa": 120,
+      "ma": 100
+    },
+    "c": {
+      "hp": 10,
+      "mp": 11,
+      "sp": 100,
+      "pa": 40,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Sword, Knight Sword, Armor, Robe, Helmet, Shield, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "09",
+    "name": "Lune Knight",
+    "id": "lune-knight-09",
+    "mul": {
+      "hp": 170,
+      "mp": 103,
+      "sp": 110,
+      "pa": 105,
+      "ma": 100
+    },
+    "c": {
+      "hp": 10,
+      "mp": 9,
+      "sp": 95,
+      "pa": 48,
+      "ma": 42
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Sword, Knight Sword, Armor, Robe, Helmet, Shield, Accessory",
+    "innate": "Defense UP, Magic DefendUP"
+  },
+  {
+    "index": "0A",
+    "name": "Duke",
+    "id": "duke-0a",
+    "mul": {
+      "hp": 100,
+      "mp": 100,
+      "sp": 100,
+      "pa": 100,
+      "ma": 100
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "<nothing>",
+    "innate": ""
+  },
+  {
+    "index": "0B",
+    "name": "Duke",
+    "id": "duke-0b",
+    "mul": {
+      "hp": 100,
+      "mp": 100,
+      "sp": 100,
+      "pa": 100,
+      "ma": 100
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "<nothing>",
+    "innate": ""
+  },
+  {
+    "index": "0C",
+    "name": "Princess",
+    "id": "princess-0c",
+    "mul": {
+      "hp": 100,
+      "mp": 100,
+      "sp": 100,
+      "pa": 100,
+      "ma": 100
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 20,
+    "type": "Special",
+    "eq": "Staff, Hat, Clothes, Robe, Accessory",
+    "innate": "Defense UP, Magic DefendUP"
+  },
+  {
+    "index": "0D",
+    "name": "Holy Swordsman",
+    "id": "holy-swordsman-0d",
+    "mul": {
+      "hp": 160,
+      "mp": 120,
+      "sp": 110,
+      "pa": 122,
+      "ma": 100
+    },
+    "c": {
+      "hp": 10,
+      "mp": 11,
+      "sp": 100,
+      "pa": 42,
+      "ma": 42
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 20,
+    "type": "Special",
+    "eq": "Ninja Sword, Sword, Knight Sword, Katana, Shield, Helmet, Hat, Armor,",
+    "innate": ""
+  },
+  {
+    "index": "0E",
+    "name": "High Priest",
+    "id": "high-priest-0e",
+    "mul": {
+      "hp": 100,
+      "mp": 100,
+      "sp": 100,
+      "pa": 100,
+      "ma": 100
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "0F",
+    "name": "Dragoner",
+    "id": "dragoner-0f",
+    "mul": {
+      "hp": 140,
+      "mp": 115,
+      "sp": 120,
+      "pa": 120,
+      "ma": 110
+    },
+    "c": {
+      "hp": 5,
+      "mp": 10,
+      "sp": 95,
+      "pa": 39,
+      "ma": 38
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 7,
+    "type": "Special",
+    "eq": "Ring, Armlet",
+    "innate": "Monster Talk, Two Swords, Monster Skill, Train"
+  },
+  {
+    "index": "10",
+    "name": "Holy Priest",
+    "id": "holy-priest-10",
+    "mul": {
+      "hp": 160,
+      "mp": 200,
+      "sp": 100,
+      "pa": 90,
+      "ma": 150
+    },
+    "c": {
+      "hp": 10,
+      "mp": 11,
+      "sp": 120,
+      "pa": 50,
+      "ma": 49
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 9,
+    "type": "Special",
+    "eq": "Rod, Staff, Dictionary, Stick, Hat, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "11",
+    "name": "Dark Knight",
+    "id": "dark-knight-11",
+    "mul": {
+      "hp": 150,
+      "mp": 100,
+      "sp": 120,
+      "pa": 100,
+      "ma": 90
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 15,
+    "type": "Special",
+    "eq": "Sword, Shield, Helmet, Armor, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "12",
+    "name": "Hell Knight",
+    "id": "hell-knight-12",
+    "mul": {
+      "hp": 0,
+      "mp": 0,
+      "sp": 0,
+      "pa": 0,
+      "ma": 0
+    },
+    "c": {
+      "hp": 0,
+      "mp": 0,
+      "sp": 0,
+      "pa": 0,
+      "ma": 0
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 8,
+    "type": "Special",
+    "eq": "<nothing>",
+    "innate": "Auto-Dead"
+  },
+  {
+    "index": "13",
+    "name": "Bishop",
+    "id": "bishop-13",
+    "mul": {
+      "hp": 100,
+      "mp": 180,
+      "sp": 100,
+      "pa": 100,
+      "ma": 100
+    },
+    "c": {
+      "hp": 15,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "<none>",
+    "innate": ""
+  },
+  {
+    "index": "14",
+    "name": "Cleric",
+    "id": "cleric-14",
+    "mul": {
+      "hp": 100,
+      "mp": 150,
+      "sp": 115,
+      "pa": 100,
+      "ma": 160
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 24,
+    "type": "Special",
+    "eq": "Staff, Hat, Clothes, Robe, Accessory",
+    "innate": "Defense UP, Magic DefendUP, Initial-Dead"
+  },
+  {
+    "index": "15",
+    "name": "Astrologist",
+    "id": "astrologist-15",
+    "mul": {
+      "hp": 140,
+      "mp": 108,
+      "sp": 125,
+      "pa": 100,
+      "ma": 130
+    },
+    "c": {
+      "hp": 10,
+      "mp": 11,
+      "sp": 95,
+      "pa": 50,
+      "ma": 55
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 15,
+    "type": "Special",
+    "eq": "Dictionary, Hat, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "16",
+    "name": "Engineer",
+    "id": "engineer-16",
+    "mul": {
+      "hp": 100,
+      "mp": 75,
+      "sp": 115,
+      "pa": 95,
+      "ma": 100
+    },
+    "c": {
+      "hp": 11,
+      "mp": 13,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 4,
+    "cev": 18,
+    "type": "Special",
+    "eq": "Gun, Hat, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "17",
+    "name": "Dark Knight",
+    "id": "dark-knight-17",
+    "mul": {
+      "hp": 150,
+      "mp": 100,
+      "sp": 120,
+      "pa": 100,
+      "ma": 90
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 15,
+    "type": "Special",
+    "eq": "Sword, Shield, Helmet, Armor, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "18",
+    "name": "Cardinal",
+    "id": "cardinal-18",
+    "mul": {
+      "hp": 100,
+      "mp": 100,
+      "sp": 100,
+      "pa": 100,
+      "ma": 100
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Knife, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "19",
+    "name": "Heaven Knight",
+    "id": "heaven-knight-19",
+    "mul": {
+      "hp": 90,
+      "mp": 100,
+      "sp": 115,
+      "pa": 80,
+      "ma": 100
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Staff, Stick, Hat, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "1A",
+    "name": "Hell Knight",
+    "id": "hell-knight-1a",
+    "mul": {
+      "hp": 100,
+      "mp": 110,
+      "sp": 110,
+      "pa": 105,
+      "ma": 100
+    },
+    "c": {
+      "hp": 10,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 8,
+    "type": "Special",
+    "eq": "Staff, Stick, Hat, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "1B",
+    "name": "Arc Knight",
+    "id": "arc-knight-1b",
+    "mul": {
+      "hp": 180,
+      "mp": 120,
+      "sp": 120,
+      "pa": 120,
+      "ma": 100
+    },
+    "c": {
+      "hp": 9,
+      "mp": 10,
+      "sp": 100,
+      "pa": 40,
+      "ma": 42
+    },
+    "move": 3,
+    "jump": 5,
+    "cev": 16,
+    "type": "Special",
+    "eq": "Katana, Shield, Helmet, Hat, Armor, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "1C",
+    "name": "Delita's Sis",
+    "id": "delita-s-sis-1c",
+    "mul": {
+      "hp": 0,
+      "mp": 0,
+      "sp": 0,
+      "pa": 0,
+      "ma": 0
+    },
+    "c": {
+      "hp": 0,
+      "mp": 0,
+      "sp": 0,
+      "pa": 0,
+      "ma": 0
+    },
+    "move": 0,
+    "jump": 0,
+    "cev": 0,
+    "type": "Special",
+    "eq": "<nothing>",
+    "innate": "Auto-Dead"
+  },
+  {
+    "index": "1D",
+    "name": "Arc Duke",
+    "id": "arc-duke-1d",
+    "mul": {
+      "hp": 100,
+      "mp": 100,
+      "sp": 100,
+      "pa": 100,
+      "ma": 100
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "1E",
+    "name": "Holy Knight",
+    "id": "holy-knight-1e",
+    "mul": {
+      "hp": 140,
+      "mp": 100,
+      "sp": 100,
+      "pa": 100,
+      "ma": 100
+    },
+    "c": {
+      "hp": 10,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 25,
+    "type": "Special",
+    "eq": "Sword, Knight Sword, Shield, Helmet, Armor, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "1F",
+    "name": "Temple Knight",
+    "id": "temple-knight-1f",
+    "mul": {
+      "hp": 122,
+      "mp": 145,
+      "sp": 105,
+      "pa": 125,
+      "ma": 105
+    },
+    "c": {
+      "hp": 10,
+      "mp": 11,
+      "sp": 100,
+      "pa": 48,
+      "ma": 45
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 14,
+    "type": "Special",
+    "eq": "Knife, Sword, Knight Sword, Shield, Helmet, Armor, Robe, Clothes,",
+    "innate": ""
+  },
+  {
+    "index": "20",
+    "name": "White Knight",
+    "id": "white-knight-20",
+    "mul": {
+      "hp": 140,
+      "mp": 150,
+      "sp": 100,
+      "pa": 116,
+      "ma": 100
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Sword, Knight Sword, Shield, Helmet, Armor, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "21",
+    "name": "Arc Witch",
+    "id": "arc-witch-21",
+    "mul": {
+      "hp": 100,
+      "mp": 100,
+      "sp": 100,
+      "pa": 100,
+      "ma": 100
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Knife, Robe, Clothes, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "22",
+    "name": "Engineer",
+    "id": "engineer-22",
+    "mul": {
+      "hp": 100,
+      "mp": 75,
+      "sp": 115,
+      "pa": 95,
+      "ma": 100
+    },
+    "c": {
+      "hp": 11,
+      "mp": 13,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 4,
+    "cev": 18,
+    "type": "Special",
+    "eq": "Gun, Hat, Clothes, Robe, Accessory",
+    "innate": "Maintenance"
+  },
+  {
+    "index": "23",
+    "name": "Bi-count",
+    "id": "bi-count-23",
+    "mul": {
+      "hp": 100,
+      "mp": 100,
+      "sp": 100,
+      "pa": 100,
+      "ma": 100
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "24",
+    "name": "Divine Knight",
+    "id": "divine-knight-24",
+    "mul": {
+      "hp": 165,
+      "mp": 100,
+      "sp": 115,
+      "pa": 124,
+      "ma": 100
+    },
+    "c": {
+      "hp": 9,
+      "mp": 9,
+      "sp": 100,
+      "pa": 37,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 25,
+    "type": "Special",
+    "eq": "Sword, Knight Sword, Shield, Helmet, Armor, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "25",
+    "name": "Divine Knight",
+    "id": "divine-knight-25",
+    "mul": {
+      "hp": 150,
+      "mp": 100,
+      "sp": 115,
+      "pa": 122,
+      "ma": 100
+    },
+    "c": {
+      "hp": 10,
+      "mp": 10,
+      "sp": 100,
+      "pa": 38,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 21,
+    "type": "Special",
+    "eq": "Sword, Knight Sword, Shield, Helmet, Armor, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "26",
+    "name": "Knight Blade",
+    "id": "knight-blade-26",
+    "mul": {
+      "hp": 155,
+      "mp": 50,
+      "sp": 110,
+      "pa": 120,
+      "ma": 50
+    },
+    "c": {
+      "hp": 10,
+      "mp": 11,
+      "sp": 100,
+      "pa": 48,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 4,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Ninja Sword, Sword, Knight Sword, Spear, Shield, Helmet, Armor, Robe,",
+    "innate": "Concentrate"
+  },
+  {
+    "index": "27",
+    "name": "Sorceror",
+    "id": "sorceror-27",
+    "mul": {
+      "hp": 125,
+      "mp": 140,
+      "sp": 105,
+      "pa": 80,
+      "ma": 125
+    },
+    "c": {
+      "hp": 10,
+      "mp": 8,
+      "sp": 100,
+      "pa": 55,
+      "ma": 49
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 14,
+    "type": "Special",
+    "eq": "Rod, Staff, Stick, Hat, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "28",
+    "name": "White Knight",
+    "id": "white-knight-28",
+    "mul": {
+      "hp": 165,
+      "mp": 150,
+      "sp": 110,
+      "pa": 120,
+      "ma": 95
+    },
+    "c": {
+      "hp": 10,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 15,
+    "type": "Special",
+    "eq": "Sword, Knight Sword, Shield, Helmet, Armor, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "29",
+    "name": "Heaven Knight",
+    "id": "heaven-knight-29",
+    "mul": {
+      "hp": 100,
+      "mp": 100,
+      "sp": 115,
+      "pa": 100,
+      "ma": 100
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Staff, Stick, Hat, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "2A",
+    "name": "Divine Knight",
+    "id": "divine-knight-2a",
+    "mul": {
+      "hp": 125,
+      "mp": 80,
+      "sp": 105,
+      "pa": 120,
+      "ma": 90
+    },
+    "c": {
+      "hp": 10,
+      "mp": 15,
+      "sp": 100,
+      "pa": 39,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 12,
+    "type": "Special",
+    "eq": "Sword, Knight Sword, Crossbow, Spear, Shield, Helmet, Armor, Clothes,",
+    "innate": ""
+  },
+  {
+    "index": "2B",
+    "name": "Engineer",
+    "id": "engineer-2b",
+    "mul": {
+      "hp": 125,
+      "mp": 80,
+      "sp": 105,
+      "pa": 120,
+      "ma": 90
+    },
+    "c": {
+      "hp": 10,
+      "mp": 15,
+      "sp": 100,
+      "pa": 39,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 12,
+    "type": "Special",
+    "eq": "Knife, Gun, Crossbow, Hat, Armor, Robe, Accessory",
+    "innate": "Defense UP, Magic DefendUP, Monster Talk"
+  },
+  {
+    "index": "2C",
+    "name": "Cleric",
+    "id": "cleric-2c",
+    "mul": {
+      "hp": 0,
+      "mp": 0,
+      "sp": 0,
+      "pa": 0,
+      "ma": 0
+    },
+    "c": {
+      "hp": 0,
+      "mp": 0,
+      "sp": 0,
+      "pa": 0,
+      "ma": 0
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 18,
+    "type": "Special",
+    "eq": "<nothing>",
+    "innate": "Auto-Dead"
+  },
+  {
+    "index": "2D",
+    "name": "Assassin",
+    "id": "assassin-2d",
+    "mul": {
+      "hp": 160,
+      "mp": 125,
+      "sp": 110,
+      "pa": 120,
+      "ma": 125
+    },
+    "c": {
+      "hp": 9,
+      "mp": 8,
+      "sp": 105,
+      "pa": 50,
+      "ma": 45
+    },
+    "move": 4,
+    "jump": 7,
+    "cev": 30,
+    "type": "Special",
+    "eq": "Katana, Hat, Clothes, Accessory",
+    "innate": "Two Swords"
+  },
+  {
+    "index": "2E",
+    "name": "Assassin",
+    "id": "assassin-2e",
+    "mul": {
+      "hp": 155,
+      "mp": 125,
+      "sp": 115,
+      "pa": 120,
+      "ma": 125
+    },
+    "c": {
+      "hp": 9,
+      "mp": 8,
+      "sp": 110,
+      "pa": 50,
+      "ma": 45
+    },
+    "move": 4,
+    "jump": 7,
+    "cev": 28,
+    "type": "Special",
+    "eq": "Ninja Sword, Hat, Clothes, Accessory",
+    "innate": "Two Swords"
+  },
+  {
+    "index": "2F",
+    "name": "Divine Knight",
+    "id": "divine-knight-2f",
+    "mul": {
+      "hp": 125,
+      "mp": 80,
+      "sp": 105,
+      "pa": 120,
+      "ma": 90
+    },
+    "c": {
+      "hp": 10,
+      "mp": 15,
+      "sp": 100,
+      "pa": 39,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 12,
+    "type": "Special",
+    "eq": "Sword, Knight Sword, Crossbow, Shield, Helmet, Armor, Clothes, Robe,",
+    "innate": ""
+  },
+  {
+    "index": "30",
+    "name": "Cleric",
+    "id": "cleric-30",
+    "mul": {
+      "hp": 90,
+      "mp": 100,
+      "sp": 105,
+      "pa": 100,
+      "ma": 160
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 18,
+    "type": "Special",
+    "eq": "Staff, Hat, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "31",
+    "name": "Phony Saint",
+    "id": "phony-saint-31",
+    "mul": {
+      "hp": 100,
+      "mp": 100,
+      "sp": 100,
+      "pa": 100,
+      "ma": 100
+    },
+    "c": {
+      "hp": 11,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "32",
+    "name": "Soldier",
+    "id": "soldier-32",
+    "mul": {
+      "hp": 125,
+      "mp": 116,
+      "sp": 100,
+      "pa": 123,
+      "ma": 120
+    },
+    "c": {
+      "hp": 11,
+      "mp": 10,
+      "sp": 100,
+      "pa": 42,
+      "ma": 46
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 20,
+    "type": "Special",
+    "eq": "Sword, Hat, Ribbon, Clothes, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "33",
+    "name": "Arc Knight",
+    "id": "arc-knight-33",
+    "mul": {
+      "hp": 170,
+      "mp": 105,
+      "sp": 125,
+      "pa": 125,
+      "ma": 105
+    },
+    "c": {
+      "hp": 8,
+      "mp": 10,
+      "sp": 97,
+      "pa": 38,
+      "ma": 48
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 22,
+    "type": "Special",
+    "eq": "Sword, Knight Sword, Shield, Helmet, Armor, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "34",
+    "name": "Holy Knight",
+    "id": "holy-knight-34",
+    "mul": {
+      "hp": 140,
+      "mp": 100,
+      "sp": 100,
+      "pa": 100,
+      "ma": 100
+    },
+    "c": {
+      "hp": 10,
+      "mp": 11,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 25,
+    "type": "Special",
+    "eq": "Sword, Knight Sword, Shield, Helmet, Armor, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "35",
+    "name": "Chemist",
+    "id": "chemist-35",
+    "mul": {
+      "hp": 75,
+      "mp": 75,
+      "sp": 100,
+      "pa": 75,
+      "ma": 80
+    },
+    "c": {
+      "hp": 12,
+      "mp": 16,
+      "sp": 100,
+      "pa": 75,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 0,
+    "type": "Special",
+    "eq": "Everything",
+    "innate": ""
+  },
+  {
+    "index": "36",
+    "name": "Priest",
+    "id": "priest-36",
+    "mul": {
+      "hp": 80,
+      "mp": 120,
+      "sp": 110,
+      "pa": 90,
+      "ma": 110
+    },
+    "c": {
+      "hp": 10,
+      "mp": 10,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 0,
+    "type": "Special",
+    "eq": "Everything",
+    "innate": ""
+  },
+  {
+    "index": "37",
+    "name": "Wizard",
+    "id": "wizard-37",
+    "mul": {
+      "hp": 80,
+      "mp": 120,
+      "sp": 110,
+      "pa": 90,
+      "ma": 110
+    },
+    "c": {
+      "hp": 12,
+      "mp": 9,
+      "sp": 100,
+      "pa": 60,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 0,
+    "type": "Special",
+    "eq": "Everything",
+    "innate": ""
+  },
+  {
+    "index": "38",
+    "name": "Oracle",
+    "id": "oracle-38",
+    "mul": {
+      "hp": 75,
+      "mp": 110,
+      "sp": 100,
+      "pa": 50,
+      "ma": 120
+    },
+    "c": {
+      "hp": 12,
+      "mp": 10,
+      "sp": 100,
+      "pa": 60,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 0,
+    "type": "Special",
+    "eq": "Everything",
+    "innate": ""
+  },
+  {
+    "index": "38",
+    "name": "Oracle",
+    "id": "oracle-38",
+    "mul": {
+      "hp": 75,
+      "mp": 110,
+      "sp": 100,
+      "pa": 50,
+      "ma": 120
+    },
+    "c": {
+      "hp": 12,
+      "mp": 10,
+      "sp": 100,
+      "pa": 60,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 0,
+    "type": "Special",
+    "eq": "Everything",
+    "innate": ""
+  },
+  {
+    "index": "3C",
+    "name": "Warlock",
+    "id": "warlock-3c",
+    "mul": {
+      "hp": 80,
+      "mp": 86,
+      "sp": 132,
+      "pa": 141,
+      "ma": 140
+    },
+    "c": {
+      "hp": 12,
+      "mp": 10,
+      "sp": 95,
+      "pa": 38,
+      "ma": 46
+    },
+    "move": 5,
+    "jump": 5,
+    "cev": 18,
+    "type": "Lucavi",
+    "eq": "<none>",
+    "innate": "Cannot enter water, Martial Arts, Short Charge"
+  },
+  {
+    "index": "3D",
+    "name": "Knight",
+    "id": "knight-3d",
+    "mul": {
+      "hp": 130,
+      "mp": 80,
+      "sp": 110,
+      "pa": 125,
+      "ma": 80
+    },
+    "c": {
+      "hp": 9,
+      "mp": 15,
+      "sp": 100,
+      "pa": 40,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Sword, Knight Sword, Flail, Shield, Helmet, Armor, Robe, Accessory",
+    "innate": "Auto-Undead, Monster Skill"
+  },
+  {
+    "index": "3E",
+    "name": "Angel of Death",
+    "id": "angel-of-death-3e",
+    "mul": {
+      "hp": 85,
+      "mp": 100,
+      "sp": 133,
+      "pa": 145,
+      "ma": 140
+    },
+    "c": {
+      "hp": 12,
+      "mp": 10,
+      "sp": 90,
+      "pa": 38,
+      "ma": 46
+    },
+    "move": 5,
+    "jump": 4,
+    "cev": 24,
+    "type": "Lucavi",
+    "eq": "<none>",
+    "innate": "Auto-Float, Cannot enter water, Fly, Short Charge, Monster Skill"
+  },
+  {
+    "index": "3F",
+    "name": "Archer",
+    "id": "archer-3f",
+    "mul": {
+      "hp": 110,
+      "mp": 65,
+      "sp": 105,
+      "pa": 115,
+      "ma": 80
+    },
+    "c": {
+      "hp": 10,
+      "mp": 16,
+      "sp": 100,
+      "pa": 45,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Special",
+    "eq": "Crossbow, Bow, Shield, Hat, Clothes, Robe, Accessory",
+    "innate": "Auto-Undead, Auto-Float, Monster Skill"
+  },
+  {
+    "index": "40",
+    "name": "Regulator",
+    "id": "regulator-40",
+    "mul": {
+      "hp": 83,
+      "mp": 87,
+      "sp": 148,
+      "pa": 141,
+      "ma": 125
+    },
+    "c": {
+      "hp": 12,
+      "mp": 10,
+      "sp": 100,
+      "pa": 38,
+      "ma": 46
+    },
+    "move": 5,
+    "jump": 4,
+    "cev": 12,
+    "type": "Lucavi",
+    "eq": "<none>",
+    "innate": "Cannot enter water, Short Charge"
+  },
+  {
+    "index": "41",
+    "name": "Holy Angel",
+    "id": "holy-angel-41",
+    "mul": {
+      "hp": 70,
+      "mp": 90,
+      "sp": 118,
+      "pa": 113,
+      "ma": 120
+    },
+    "c": {
+      "hp": 12,
+      "mp": 10,
+      "sp": 100,
+      "pa": 40,
+      "ma": 46
+    },
+    "move": 5,
+    "jump": 4,
+    "cev": 11,
+    "type": "Lucavi",
+    "eq": "<none>",
+    "innate": "Auto-Float, Martial Arts, Short Charge, Teleport 2"
+  },
+  {
+    "index": "42",
+    "name": "Wizard",
+    "id": "wizard-42",
+    "mul": {
+      "hp": 100,
+      "mp": 120,
+      "sp": 105,
+      "pa": 60,
+      "ma": 150
+    },
+    "c": {
+      "hp": 11,
+      "mp": 9,
+      "sp": 100,
+      "pa": 60,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 5,
+    "type": "Special",
+    "eq": "Rod, Hat, Clothes, Robe, Accessory",
+    "innate": "Auto-Undead, Auto-Float, Monster Skill"
+  },
+  {
+    "index": "43",
+    "name": "Impure King",
+    "id": "impure-king-43",
+    "mul": {
+      "hp": 50,
+      "mp": 90,
+      "sp": 130,
+      "pa": 144,
+      "ma": 130
+    },
+    "c": {
+      "hp": 12,
+      "mp": 10,
+      "sp": 100,
+      "pa": 42,
+      "ma": 46
+    },
+    "move": 4,
+    "jump": 4,
+    "cev": 12,
+    "type": "Lucavi",
+    "eq": "<none>",
+    "innate": "Martial Arts, Short Charge"
+  },
+  {
+    "index": "44",
+    "name": "Time Mage",
+    "id": "time-mage-44",
+    "mul": {
+      "hp": 100,
+      "mp": 120,
+      "sp": 110,
+      "pa": 50,
+      "ma": 135
+    },
+    "c": {
+      "hp": 11,
+      "mp": 10,
+      "sp": 100,
+      "pa": 65,
+      "ma": 48
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 5,
+    "type": "Special",
+    "eq": "Staff, Hat, Clothes, Robe, Accessory",
+    "innate": "Auto-Undead, Auto-Float, Monster Skill"
+  },
+  {
+    "index": "45",
+    "name": "Ghost of Fury",
+    "id": "ghost-of-fury-45",
+    "mul": {
+      "hp": 90,
+      "mp": 95,
+      "sp": 150,
+      "pa": 139,
+      "ma": 110
+    },
+    "c": {
+      "hp": 12,
+      "mp": 10,
+      "sp": 100,
+      "pa": 43,
+      "ma": 47
+    },
+    "move": 5,
+    "jump": 4,
+    "cev": 19,
+    "type": "Lucavi",
+    "eq": "<none>",
+    "innate": "Cannot enter water, Short Charge"
+  },
+  {
+    "index": "46",
+    "name": "Oracle",
+    "id": "oracle-46",
+    "mul": {
+      "hp": 90,
+      "mp": 110,
+      "sp": 110,
+      "pa": 50,
+      "ma": 120
+    },
+    "c": {
+      "hp": 11,
+      "mp": 10,
+      "sp": 100,
+      "pa": 60,
+      "ma": 45
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 5,
+    "type": "Special",
+    "eq": "Rod, Staff, Stick, Hat, Clothes, Robe, Accessory",
+    "innate": "Auto-Undead, Auto-Float, Monster Skill"
+  },
+  {
+    "index": "47",
+    "name": "Summoner",
+    "id": "summoner-47",
+    "mul": {
+      "hp": 85,
+      "mp": 125,
+      "sp": 100,
+      "pa": 50,
+      "ma": 125
+    },
+    "c": {
+      "hp": 12,
+      "mp": 8,
+      "sp": 100,
+      "pa": 70,
+      "ma": 40
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 5,
+    "type": "Special",
+    "eq": "Rod, Staff, Hat, Clothes, Robe, Accessory",
+    "innate": "Auto-Undead, Auto-Float, Monster Skill"
+  },
+  {
+    "index": "48",
+    "name": "Holy Dragon",
+    "id": "holy-dragon-48",
+    "mul": {
+      "hp": 130,
+      "mp": 115,
+      "sp": 132,
+      "pa": 147,
+      "ma": 110
+    },
+    "c": {
+      "hp": 6,
+      "mp": 30,
+      "sp": 90,
+      "pa": 39,
+      "ma": 6
+    },
+    "move": 5,
+    "jump": 3,
+    "cev": 5,
+    "type": "Lucavi",
+    "eq": "<none>",
+    "innate": "Cannot enter water"
+  },
+  {
+    "index": "49",
+    "name": "Arch Angel",
+    "id": "arch-angel-49",
+    "mul": {
+      "hp": 125,
+      "mp": 100,
+      "sp": 150,
+      "pa": 120,
+      "ma": 130
+    },
+    "c": {
+      "hp": 10,
+      "mp": 15,
+      "sp": 95,
+      "pa": 38,
+      "ma": 48
+    },
+    "move": 8,
+    "jump": 5,
+    "cev": 10,
+    "type": "Lucavi",
+    "eq": "<none>",
+    "innate": "Auto-Float, Face Up, Short Charge, Teleport 2"
+  },
+  {
+    "index": "4A",
+    "name": "Squire",
+    "id": "squire-4a",
+    "mul": {
+      "hp": 100,
+      "mp": 75,
+      "sp": 100,
+      "pa": 90,
+      "ma": 80
+    },
+    "c": {
+      "hp": 11,
+      "mp": 15,
+      "sp": 100,
+      "pa": 60,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 5,
+    "type": "Generic",
+    "eq": "Knife, Sword, Axe, Flail, Hat, Clothes, Acessory",
+    "innate": ""
+  },
+  {
+    "index": "4B",
+    "name": "Chemist",
+    "id": "chemist-4b",
+    "mul": {
+      "hp": 80,
+      "mp": 75,
+      "sp": 100,
+      "pa": 75,
+      "ma": 80
+    },
+    "c": {
+      "hp": 12,
+      "mp": 16,
+      "sp": 100,
+      "pa": 75,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 5,
+    "type": "Generic",
+    "eq": "Knife, Gun, Hat, Clothes, Acessory",
+    "innate": "Throw Item"
+  },
+  {
+    "index": "4C",
+    "name": "Knight",
+    "id": "knight-4c",
+    "mul": {
+      "hp": 120,
+      "mp": 80,
+      "sp": 100,
+      "pa": 120,
+      "ma": 80
+    },
+    "c": {
+      "hp": 10,
+      "mp": 15,
+      "sp": 100,
+      "pa": 40,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Generic",
+    "eq": "Sword, Knight Sword, Shield, Helmet, Armor, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "4D",
+    "name": "Archer",
+    "id": "archer-4d",
+    "mul": {
+      "hp": 100,
+      "mp": 65,
+      "sp": 100,
+      "pa": 110,
+      "ma": 80
+    },
+    "c": {
+      "hp": 11,
+      "mp": 16,
+      "sp": 100,
+      "pa": 45,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Generic",
+    "eq": "Crossbow, Bow, Shield, Hat, Clothes, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "4E",
+    "name": "Monk",
+    "id": "monk-4e",
+    "mul": {
+      "hp": 135,
+      "mp": 80,
+      "sp": 110,
+      "pa": 129,
+      "ma": 80
+    },
+    "c": {
+      "hp": 9,
+      "mp": 13,
+      "sp": 100,
+      "pa": 48,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 4,
+    "cev": 20,
+    "type": "Generic",
+    "eq": "Clothes, Acessory",
+    "innate": "Martial Arts"
+  },
+  {
+    "index": "4F",
+    "name": "Priest",
+    "id": "priest-4f",
+    "mul": {
+      "hp": 80,
+      "mp": 120,
+      "sp": 110,
+      "pa": 90,
+      "ma": 110
+    },
+    "c": {
+      "hp": 10,
+      "mp": 10,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 5,
+    "type": "Generic",
+    "eq": "Staff, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "50",
+    "name": "Wizard",
+    "id": "wizard-50",
+    "mul": {
+      "hp": 75,
+      "mp": 120,
+      "sp": 100,
+      "pa": 60,
+      "ma": 150
+    },
+    "c": {
+      "hp": 12,
+      "mp": 9,
+      "sp": 100,
+      "pa": 60,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 5,
+    "type": "Generic",
+    "eq": "Rod, Hat, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "51",
+    "name": "Time Mage",
+    "id": "time-mage-51",
+    "mul": {
+      "hp": 75,
+      "mp": 120,
+      "sp": 100,
+      "pa": 50,
+      "ma": 130
+    },
+    "c": {
+      "hp": 12,
+      "mp": 10,
+      "sp": 100,
+      "pa": 65,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 5,
+    "type": "Generic",
+    "eq": "Staff, Hat, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "52",
+    "name": "Summoner",
+    "id": "summoner-52",
+    "mul": {
+      "hp": 70,
+      "mp": 125,
+      "sp": 90,
+      "pa": 50,
+      "ma": 125
+    },
+    "c": {
+      "hp": 13,
+      "mp": 8,
+      "sp": 100,
+      "pa": 70,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 5,
+    "type": "Generic",
+    "eq": "Rod, Staff, Hat, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "53",
+    "name": "Thief",
+    "id": "thief-53",
+    "mul": {
+      "hp": 90,
+      "mp": 50,
+      "sp": 110,
+      "pa": 100,
+      "ma": 60
+    },
+    "c": {
+      "hp": 11,
+      "mp": 16,
+      "sp": 90,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 4,
+    "cev": 25,
+    "type": "Generic",
+    "eq": "Knife, Hat, Clothes, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "54",
+    "name": "Mediator",
+    "id": "mediator-54",
+    "mul": {
+      "hp": 80,
+      "mp": 70,
+      "sp": 100,
+      "pa": 75,
+      "ma": 75
+    },
+    "c": {
+      "hp": 11,
+      "mp": 18,
+      "sp": 100,
+      "pa": 55,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 5,
+    "type": "Generic",
+    "eq": "Knife, Gun, Hat, Clothes, Robe, Accessory",
+    "innate": "Monster Talk"
+  },
+  {
+    "index": "55",
+    "name": "Oracle",
+    "id": "oracle-55",
+    "mul": {
+      "hp": 75,
+      "mp": 110,
+      "sp": 100,
+      "pa": 50,
+      "ma": 120
+    },
+    "c": {
+      "hp": 12,
+      "mp": 10,
+      "sp": 100,
+      "pa": 60,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 5,
+    "type": "Generic",
+    "eq": "Rod, Staff, Dictionary, Stick, Hat, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "56",
+    "name": "Geomancer",
+    "id": "geomancer-56",
+    "mul": {
+      "hp": 110,
+      "mp": 95,
+      "sp": 100,
+      "pa": 110,
+      "ma": 105
+    },
+    "c": {
+      "hp": 10,
+      "mp": 11,
+      "sp": 100,
+      "pa": 45,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 10,
+    "type": "Generic",
+    "eq": "Sword, Axe, Shield, Hat, Robe, Clothes, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "57",
+    "name": "Lancer",
+    "id": "lancer-57",
+    "mul": {
+      "hp": 120,
+      "mp": 50,
+      "sp": 100,
+      "pa": 120,
+      "ma": 50
+    },
+    "c": {
+      "hp": 10,
+      "mp": 15,
+      "sp": 100,
+      "pa": 40,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 4,
+    "cev": 15,
+    "type": "Generic",
+    "eq": "Spear, Shield, Helmet, Armor, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "58",
+    "name": "Samurai",
+    "id": "samurai-58",
+    "mul": {
+      "hp": 75,
+      "mp": 75,
+      "sp": 100,
+      "pa": 128,
+      "ma": 90
+    },
+    "c": {
+      "hp": 12,
+      "mp": 14,
+      "sp": 100,
+      "pa": 45,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 20,
+    "type": "Generic",
+    "eq": "Katana, Helmet, Armor, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "59",
+    "name": "Ninja",
+    "id": "ninja-59",
+    "mul": {
+      "hp": 70,
+      "mp": 50,
+      "sp": 120,
+      "pa": 120,
+      "ma": 75
+    },
+    "c": {
+      "hp": 12,
+      "mp": 13,
+      "sp": 80,
+      "pa": 43,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 4,
+    "cev": 30,
+    "type": "Generic",
+    "eq": "Knife, Ninja Sword, Flail, Hat, Clothes, Accessory",
+    "innate": "Two Swords"
+  },
+  {
+    "index": "5A",
+    "name": "Calculator",
+    "id": "calculator-5a",
+    "mul": {
+      "hp": 65,
+      "mp": 80,
+      "sp": 50,
+      "pa": 50,
+      "ma": 70
+    },
+    "c": {
+      "hp": 14,
+      "mp": 10,
+      "sp": 100,
+      "pa": 70,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 5,
+    "type": "Generic",
+    "eq": "Dictionary, Stick, Hat, Clothes, Robe, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "5B",
+    "name": "Bard",
+    "id": "bard-5b",
+    "mul": {
+      "hp": 55,
+      "mp": 50,
+      "sp": 100,
+      "pa": 30,
+      "ma": 115
+    },
+    "c": {
+      "hp": 20,
+      "mp": 20,
+      "sp": 100,
+      "pa": 80,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 5,
+    "type": "Generic",
+    "eq": "Harp, Hat, Clothes, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "5C",
+    "name": "Dancer",
+    "id": "dancer-5c",
+    "mul": {
+      "hp": 60,
+      "mp": 50,
+      "sp": 100,
+      "pa": 110,
+      "ma": 95
+    },
+    "c": {
+      "hp": 20,
+      "mp": 20,
+      "sp": 100,
+      "pa": 50,
+      "ma": 50
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 5,
+    "type": "Generic",
+    "eq": "Knife, Fabric, Hat, Clothes, Accessory",
+    "innate": ""
+  },
+  {
+    "index": "5D",
+    "name": "Mime",
+    "id": "mime-5d",
+    "mul": {
+      "hp": 140,
+      "mp": 50,
+      "sp": 120,
+      "pa": 120,
+      "ma": 115
+    },
+    "c": {
+      "hp": 6,
+      "mp": 30,
+      "sp": 100,
+      "pa": 35,
+      "ma": 40
+    },
+    "move": 4,
+    "jump": 4,
+    "cev": 5,
+    "type": "Generic",
+    "eq": "<none> | Cannot use secondary, reaction, support, or move abilities.",
+    "innate": "Concentrate, Martial Arts, Monster Skill"
+  },
+  {
+    "index": "5E",
+    "name": "Chocobo",
+    "id": "chocobo-5e",
+    "mul": {
+      "hp": 108,
+      "mp": 100,
+      "sp": 119,
+      "pa": 97,
+      "ma": 94
+    },
+    "c": {
+      "hp": 8,
+      "mp": 30,
+      "sp": 75,
+      "pa": 34,
+      "ma": 7
+    },
+    "move": 6,
+    "jump": 5,
+    "cev": 15,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Walk on Water, Counter"
+  },
+  {
+    "index": "5F",
+    "name": "Black Chocobo",
+    "id": "black-chocobo-5f",
+    "mul": {
+      "hp": 80,
+      "mp": 150,
+      "sp": 98,
+      "pa": 150,
+      "ma": 105
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 6,
+    "jump": 5,
+    "cev": 25,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Walk on Water, Fly, Counter"
+  },
+  {
+    "index": "60",
+    "name": "Red Chocobo",
+    "id": "red-chocobo-60",
+    "mul": {
+      "hp": 91,
+      "mp": 90,
+      "sp": 136,
+      "pa": 130,
+      "ma": 99
+    },
+    "c": {
+      "hp": 4,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 6,
+    "jump": 5,
+    "cev": 10,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Walk on Water, Ignore Height, Counter"
+  },
+  {
+    "index": "61",
+    "name": "Goblin",
+    "id": "goblin-61",
+    "mul": {
+      "hp": 117,
+      "mp": 40,
+      "sp": 105,
+      "pa": 98,
+      "ma": 85
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 18,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Counter, Ice Weakness"
+  },
+  {
+    "index": "62",
+    "name": "Black Goblin",
+    "id": "black-goblin-62",
+    "mul": {
+      "hp": 86,
+      "mp": 35,
+      "sp": 114,
+      "pa": 103,
+      "ma": 87
+    },
+    "c": {
+      "hp": 6,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 19,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Counter, Ice Weakness"
+  },
+  {
+    "index": "63",
+    "name": "Gobbledeguck",
+    "id": "gobbledeguck-63",
+    "mul": {
+      "hp": 98,
+      "mp": 75,
+      "sp": 128,
+      "pa": 115,
+      "ma": 92
+    },
+    "c": {
+      "hp": 6,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 20,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Counter, Ice Weakness"
+  },
+  {
+    "index": "64",
+    "name": "Bomb",
+    "id": "bomb-64",
+    "mul": {
+      "hp": 85,
+      "mp": 20,
+      "sp": 104,
+      "pa": 100,
+      "ma": 93
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 90,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Float, Counter, Absorb Fire, Half Ice,"
+  },
+  {
+    "index": "65",
+    "name": "Grenade",
+    "id": "grenade-65",
+    "mul": {
+      "hp": 87,
+      "mp": 30,
+      "sp": 115,
+      "pa": 85,
+      "ma": 94
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 90,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 11,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Float, Counter, Absorb Fire, Half Ice,"
+  },
+  {
+    "index": "66",
+    "name": "Explosive",
+    "id": "explosive-66",
+    "mul": {
+      "hp": 124,
+      "mp": 40,
+      "sp": 100,
+      "pa": 116,
+      "ma": 96
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 90,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 12,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Float, Counter, Absorb Fire, Half Ice,"
+  },
+  {
+    "index": "67",
+    "name": "Red Panther",
+    "id": "red-panther-67",
+    "mul": {
+      "hp": 116,
+      "mp": 50,
+      "sp": 116,
+      "pa": 98,
+      "ma": 91
+    },
+    "c": {
+      "hp": 6,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 4,
+    "jump": 4,
+    "cev": 23,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Ignore Height, Counter, Earth Weakness"
+  },
+  {
+    "index": "68",
+    "name": "Cuar",
+    "id": "cuar-68",
+    "mul": {
+      "hp": 91,
+      "mp": 60,
+      "sp": 129,
+      "pa": 116,
+      "ma": 105
+    },
+    "c": {
+      "hp": 6,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 4,
+    "jump": 4,
+    "cev": 26,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Ignore Height, Counter, Earth Weakness"
+  },
+  {
+    "index": "69",
+    "name": "Vampire",
+    "id": "vampire-69",
+    "mul": {
+      "hp": 99,
+      "mp": 70,
+      "sp": 134,
+      "pa": 132,
+      "ma": 85
+    },
+    "c": {
+      "hp": 6,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 4,
+    "jump": 4,
+    "cev": 24,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Ignore Height, Counter, Earth Weakness"
+  },
+  {
+    "index": "6A",
+    "name": "Pisco Demon",
+    "id": "pisco-demon-6a",
+    "mul": {
+      "hp": 108,
+      "mp": 120,
+      "sp": 111,
+      "pa": 90,
+      "ma": 96
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 8,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Move Underwater, Counter, Absorb Water, Lightning Weakness"
+  },
+  {
+    "index": "6B",
+    "name": "Squidlarkin",
+    "id": "squidlarkin-6b",
+    "mul": {
+      "hp": 115,
+      "mp": 115,
+      "sp": 101,
+      "pa": 101,
+      "ma": 96
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 9,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Move Underwater, Counter, Absorb Water, Lightning Weakness"
+  },
+  {
+    "index": "6C",
+    "name": "Mindflare",
+    "id": "mindflare-6c",
+    "mul": {
+      "hp": 92,
+      "mp": 160,
+      "sp": 112,
+      "pa": 127,
+      "ma": 92
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 10,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Move Underwater, Counter, Absorb Water, Lightning Weakness"
+  },
+  {
+    "index": "6D",
+    "name": "Skeleton",
+    "id": "skeleton-6d",
+    "mul": {
+      "hp": 115,
+      "mp": 50,
+      "sp": 120,
+      "pa": 108,
+      "ma": 85
+    },
+    "c": {
+      "hp": 5,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 4,
+    "cev": 11,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Counter, Auto-Undead, Absorb Dark, Fire Weakness, Holy Weakness"
+  },
+  {
+    "index": "6E",
+    "name": "Bone Snatch",
+    "id": "bone-snatch-6e",
+    "mul": {
+      "hp": 90,
+      "mp": 40,
+      "sp": 106,
+      "pa": 123,
+      "ma": 87
+    },
+    "c": {
+      "hp": 5,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 4,
+    "cev": 12,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Counter, Auto-Undead, Absorb Dark, Fire Weakness, Holy Weakness"
+  },
+  {
+    "index": "6F",
+    "name": "Living Bone",
+    "id": "living-bone-6f",
+    "mul": {
+      "hp": 101,
+      "mp": 30,
+      "sp": 102,
+      "pa": 125,
+      "ma": 88
+    },
+    "c": {
+      "hp": 5,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 4,
+    "cev": 13,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Counter, Auto-Undead, Absorb Dark, Fire Weakness, Holy Weakness"
+  },
+  {
+    "index": "70",
+    "name": "Ghoul",
+    "id": "ghoul-70",
+    "mul": {
+      "hp": 83,
+      "mp": 124,
+      "sp": 103,
+      "pa": 90,
+      "ma": 105
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 4,
+    "jump": 4,
+    "cev": 26,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Float, Counter, Teleport, Auto-Undead,"
+  },
+  {
+    "index": "71",
+    "name": "Gust",
+    "id": "gust-71",
+    "mul": {
+      "hp": 82,
+      "mp": 96,
+      "sp": 110,
+      "pa": 93,
+      "ma": 106
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 4,
+    "jump": 4,
+    "cev": 27,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Float, Counter, Teleport, Auto-Undead,"
+  },
+  {
+    "index": "72",
+    "name": "Revnant",
+    "id": "revnant-72",
+    "mul": {
+      "hp": 93,
+      "mp": 64,
+      "sp": 121,
+      "pa": 97,
+      "ma": 110
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 5,
+    "jump": 4,
+    "cev": 28,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Float, Counter, Teleport, Auto-Undead,"
+  },
+  {
+    "index": "73",
+    "name": "Flotiball",
+    "id": "flotiball-73",
+    "mul": {
+      "hp": 80,
+      "mp": 80,
+      "sp": 104,
+      "pa": 90,
+      "ma": 89
+    },
+    "c": {
+      "hp": 6,
+      "mp": 30,
+      "sp": 85,
+      "pa": 40,
+      "ma": 7
+    },
+    "move": 5,
+    "jump": 5,
+    "cev": 12,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Fly, Counter, Half Wind, Ice Weakness"
+  },
+  {
+    "index": "74",
+    "name": "Ahriman",
+    "id": "ahriman-74",
+    "mul": {
+      "hp": 75,
+      "mp": 95,
+      "sp": 95,
+      "pa": 140,
+      "ma": 95
+    },
+    "c": {
+      "hp": 6,
+      "mp": 30,
+      "sp": 85,
+      "pa": 40,
+      "ma": 7
+    },
+    "move": 5,
+    "jump": 5,
+    "cev": 13,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Fly, Counter, Half Wind, Ice Weakness"
+  },
+  {
+    "index": "75",
+    "name": "Plague",
+    "id": "plague-75",
+    "mul": {
+      "hp": 77,
+      "mp": 140,
+      "sp": 108,
+      "pa": 126,
+      "ma": 120
+    },
+    "c": {
+      "hp": 6,
+      "mp": 30,
+      "sp": 85,
+      "pa": 40,
+      "ma": 7
+    },
+    "move": 5,
+    "jump": 5,
+    "cev": 11,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Fly, Counter, Half Wind, Ice Weakness"
+  },
+  {
+    "index": "76",
+    "name": "Juravis",
+    "id": "juravis-76",
+    "mul": {
+      "hp": 90,
+      "mp": 40,
+      "sp": 113,
+      "pa": 105,
+      "ma": 85
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 6,
+    "jump": 6,
+    "cev": 30,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Fly, Counter, Half Wind, Earth Weakness"
+  },
+  {
+    "index": "77",
+    "name": "Steel Hawk",
+    "id": "steel-hawk-77",
+    "mul": {
+      "hp": 85,
+      "mp": 60,
+      "sp": 131,
+      "pa": 108,
+      "ma": 90
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 6,
+    "jump": 6,
+    "cev": 28,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Fly, Counter, Half Wind, Earth Weakness"
+  },
+  {
+    "index": "78",
+    "name": "Cocatoris",
+    "id": "cocatoris-78",
+    "mul": {
+      "hp": 101,
+      "mp": 10,
+      "sp": 135,
+      "pa": 152,
+      "ma": 100
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 6,
+    "jump": 6,
+    "cev": 33,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Fly, Counter, Half Wind, Earth Weakness"
+  },
+  {
+    "index": "79",
+    "name": "Uribo",
+    "id": "uribo-79",
+    "mul": {
+      "hp": 69,
+      "mp": 1,
+      "sp": 140,
+      "pa": 70,
+      "ma": 110
+    },
+    "c": {
+      "hp": 9,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 42,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Counter"
+  },
+  {
+    "index": "7A",
+    "name": "Porky",
+    "id": "porky-7a",
+    "mul": {
+      "hp": 83,
+      "mp": 1,
+      "sp": 139,
+      "pa": 80,
+      "ma": 110
+    },
+    "c": {
+      "hp": 9,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 36,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Counter"
+  },
+  {
+    "index": "7B",
+    "name": "Wildbow",
+    "id": "wildbow-7b",
+    "mul": {
+      "hp": 77,
+      "mp": 1,
+      "sp": 138,
+      "pa": 160,
+      "ma": 110
+    },
+    "c": {
+      "hp": 9,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 39,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Counter"
+  },
+  {
+    "index": "7C",
+    "name": "Woodman",
+    "id": "woodman-7c",
+    "mul": {
+      "hp": 150,
+      "mp": 160,
+      "sp": 99,
+      "pa": 102,
+      "ma": 100
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 90,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 0,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Counter, Absorb Earth, Fire Weakness"
+  },
+  {
+    "index": "7D",
+    "name": "Trent",
+    "id": "trent-7d",
+    "mul": {
+      "hp": 130,
+      "mp": 180,
+      "sp": 96,
+      "pa": 89,
+      "ma": 95
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 90,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 0,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Counter, Absorb Earth, Fire Weakness"
+  },
+  {
+    "index": "7E",
+    "name": "Taiju",
+    "id": "taiju-7e",
+    "mul": {
+      "hp": 175,
+      "mp": 150,
+      "sp": 94,
+      "pa": 97,
+      "ma": 99
+    },
+    "c": {
+      "hp": 7,
+      "mp": 30,
+      "sp": 90,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 0,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Counter, Absorb Earth, Fire Weakness"
+  },
+  {
+    "index": "7F",
+    "name": "Bull Demon",
+    "id": "bull-demon-7f",
+    "mul": {
+      "hp": 135,
+      "mp": 5,
+      "sp": 107,
+      "pa": 120,
+      "ma": 100
+    },
+    "c": {
+      "hp": 6,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 11,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Counter, Water Weakness"
+  },
+  {
+    "index": "80",
+    "name": "Minitaurus",
+    "id": "minitaurus-80",
+    "mul": {
+      "hp": 160,
+      "mp": 8,
+      "sp": 108,
+      "pa": 152,
+      "ma": 100
+    },
+    "c": {
+      "hp": 6,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 15,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Counter, Water Weakness"
+  },
+  {
+    "index": "81",
+    "name": "Sacred",
+    "id": "sacred-81",
+    "mul": {
+      "hp": 151,
+      "mp": 10,
+      "sp": 122,
+      "pa": 173,
+      "ma": 100
+    },
+    "c": {
+      "hp": 6,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 12,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Counter, Water Weakness"
+  },
+  {
+    "index": "82",
+    "name": "Morbol",
+    "id": "morbol-82",
+    "mul": {
+      "hp": 175,
+      "mp": 15,
+      "sp": 97,
+      "pa": 105,
+      "ma": 99
+    },
+    "c": {
+      "hp": 8,
+      "mp": 30,
+      "sp": 90,
+      "pa": 38,
+      "ma": 30
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 0,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Move in Water, Counter, Ice Weakness"
+  },
+  {
+    "index": "83",
+    "name": "Ochu",
+    "id": "ochu-83",
+    "mul": {
+      "hp": 145,
+      "mp": 15,
+      "sp": 95,
+      "pa": 110,
+      "ma": 110
+    },
+    "c": {
+      "hp": 8,
+      "mp": 30,
+      "sp": 90,
+      "pa": 39,
+      "ma": 27
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 0,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Move in Water, Counter, Ice Weakness"
+  },
+  {
+    "index": "84",
+    "name": "Great Morbol",
+    "id": "great-morbol-84",
+    "mul": {
+      "hp": 181,
+      "mp": 10,
+      "sp": 93,
+      "pa": 98,
+      "ma": 95
+    },
+    "c": {
+      "hp": 8,
+      "mp": 30,
+      "sp": 88,
+      "pa": 39,
+      "ma": 24
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 0,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Move in Water, Counter, Ice Weakness"
+  },
+  {
+    "index": "85",
+    "name": "Behemoth",
+    "id": "behemoth-85",
+    "mul": {
+      "hp": 140,
+      "mp": 120,
+      "sp": 117,
+      "pa": 134,
+      "ma": 105
+    },
+    "c": {
+      "hp": 5,
+      "mp": 30,
+      "sp": 85,
+      "pa": 36,
+      "ma": 7
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 13,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Counter"
+  },
+  {
+    "index": "86",
+    "name": "King Behemoth",
+    "id": "king-behemoth-86",
+    "mul": {
+      "hp": 150,
+      "mp": 140,
+      "sp": 123,
+      "pa": 149,
+      "ma": 100
+    },
+    "c": {
+      "hp": 5,
+      "mp": 30,
+      "sp": 85,
+      "pa": 35,
+      "ma": 7
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 13,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Counter"
+  },
+  {
+    "index": "87",
+    "name": "Dark Behemoth",
+    "id": "dark-behemoth-87",
+    "mul": {
+      "hp": 161,
+      "mp": 160,
+      "sp": 125,
+      "pa": 200,
+      "ma": 95
+    },
+    "c": {
+      "hp": 5,
+      "mp": 30,
+      "sp": 85,
+      "pa": 34,
+      "ma": 6
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 18,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Counter"
+  },
+  {
+    "index": "88",
+    "name": "Dragon",
+    "id": "dragon-88",
+    "mul": {
+      "hp": 133,
+      "mp": 75,
+      "sp": 118,
+      "pa": 136,
+      "ma": 100
+    },
+    "c": {
+      "hp": 6,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 5,
+    "jump": 3,
+    "cev": 5,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Counter"
+  },
+  {
+    "index": "89",
+    "name": "Blue Dragon",
+    "id": "blue-dragon-89",
+    "mul": {
+      "hp": 135,
+      "mp": 110,
+      "sp": 124,
+      "pa": 130,
+      "ma": 105
+    },
+    "c": {
+      "hp": 6,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 7
+    },
+    "move": 5,
+    "jump": 3,
+    "cev": 9,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Counter, Absorb Ice, Fire Weakness"
+  },
+  {
+    "index": "8A",
+    "name": "Red Dragon",
+    "id": "red-dragon-8a",
+    "mul": {
+      "hp": 157,
+      "mp": 115,
+      "sp": 132,
+      "pa": 147,
+      "ma": 100
+    },
+    "c": {
+      "hp": 6,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 6
+    },
+    "move": 5,
+    "jump": 3,
+    "cev": 8,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Counter, Absorb Fire, Ice Weakness"
+  },
+  {
+    "index": "8B",
+    "name": "Hyudra",
+    "id": "hyudra-8b",
+    "mul": {
+      "hp": 80,
+      "mp": 50,
+      "sp": 126,
+      "pa": 133,
+      "ma": 100
+    },
+    "c": {
+      "hp": 3,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 34
+    },
+    "move": 4,
+    "jump": 4,
+    "cev": 0,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Fly, Counter, Ice Weakness, Wind Weakness"
+  },
+  {
+    "index": "8C",
+    "name": "Hydra",
+    "id": "hydra-8c",
+    "mul": {
+      "hp": 100,
+      "mp": 160,
+      "sp": 133,
+      "pa": 151,
+      "ma": 100
+    },
+    "c": {
+      "hp": 3,
+      "mp": 30,
+      "sp": 85,
+      "pa": 39,
+      "ma": 31
+    },
+    "move": 4,
+    "jump": 4,
+    "cev": 0,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Fly, Counter, Ice Weakness, Wind Weakness"
+  },
+  {
+    "index": "8D",
+    "name": "Tiamat",
+    "id": "tiamat-8d",
+    "mul": {
+      "hp": 112,
+      "mp": 90,
+      "sp": 137,
+      "pa": 175,
+      "ma": 120
+    },
+    "c": {
+      "hp": 3,
+      "mp": 30,
+      "sp": 85,
+      "pa": 35,
+      "ma": 29
+    },
+    "move": 4,
+    "jump": 4,
+    "cev": 0,
+    "type": "Monster",
+    "eq": "",
+    "innate": "Cannot enter water, Fly, Counter, Ice Weakness, Wind Weakness"
+  },
+  {
+    "index": "90",
+    "name": "Byblos",
+    "id": "byblos-90",
+    "mul": {
+      "hp": 130,
+      "mp": 110,
+      "sp": 104,
+      "pa": 100,
+      "ma": 100
+    },
+    "c": {
+      "hp": 6,
+      "mp": 7,
+      "sp": 75,
+      "pa": 40,
+      "ma": 35
+    },
+    "move": 3,
+    "jump": 6,
+    "cev": 33,
+    "type": "Demon",
+    "eq": "",
+    "innate": "Cannot enter water, Ignore Height, Secret Hunt, Counter, Fire Weakness"
+  },
+  {
+    "index": "91",
+    "name": "Steel Giant",
+    "id": "steel-giant-91",
+    "mul": {
+      "hp": 115,
+      "mp": 0,
+      "sp": 105,
+      "pa": 140,
+      "ma": 0
+    },
+    "c": {
+      "hp": 4,
+      "mp": 100,
+      "sp": 80,
+      "pa": 30,
+      "ma": 100
+    },
+    "move": 3,
+    "jump": 3,
+    "cev": 0,
+    "type": "Demon",
+    "eq": "",
+    "innate": "Cannot enter water, Any Weather, Any Ground, Counter, Auto-Innocent,"
+  },
+  {
+    "index": "96",
+    "name": "Apanda",
+    "id": "apanda-96",
+    "mul": {
+      "hp": 140,
+      "mp": 120,
+      "sp": 105,
+      "pa": 100,
+      "ma": 100
+    },
+    "c": {
+      "hp": 6,
+      "mp": 7,
+      "sp": 98,
+      "pa": 36,
+      "ma": 35
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 10,
+    "type": "Demon",
+    "eq": "",
+    "innate": "Cannot enter water, Ignore Height, Short Charge, Counter,"
+  },
+  {
+    "index": "97",
+    "name": "Serpentarius",
+    "id": "serpentarius-97",
+    "mul": {
+      "hp": 100,
+      "mp": 150,
+      "sp": 90,
+      "pa": 50,
+      "ma": 125
+    },
+    "c": {
+      "hp": 10,
+      "mp": 8,
+      "sp": 100,
+      "pa": 70,
+      "ma": 50
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 3,
+    "type": "Demon",
+    "eq": "",
+    "innate": "Cannot enter water, Short Charge, Counter"
+  },
+  {
+    "index": "99",
+    "name": "Archaic Demon",
+    "id": "archaic-demon-99",
+    "mul": {
+      "hp": 140,
+      "mp": 200,
+      "sp": 110,
+      "pa": 130,
+      "ma": 145
+    },
+    "c": {
+      "hp": 8,
+      "mp": 9,
+      "sp": 100,
+      "pa": 39,
+      "ma": 45
+    },
+    "move": 4,
+    "jump": 3,
+    "cev": 5,
+    "type": "Demon",
+    "eq": "",
+    "innate": "Cannot enter water, Short Charge, Counter"
+  },
+  {
+    "index": "9A",
+    "name": "Ultima Demon",
+    "id": "ultima-demon-9a",
+    "mul": {
+      "hp": 155,
+      "mp": 180,
+      "sp": 105,
+      "pa": 135,
+      "ma": 128
+    },
+    "c": {
+      "hp": 9,
+      "mp": 8,
+      "sp": 100,
+      "pa": 39,
+      "ma": 43
+    },
+    "move": 5,
+    "jump": 2,
+    "cev": 10,
+    "type": "Demon",
+    "eq": "",
+    "innate": "Cannot enter water, Martial Arts, Short Charge, Counter"
+  }
+]

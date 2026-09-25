@@ -1,0 +1,266 @@
+[
+  {
+    "monster": "Goblin",
+    "id": "goblin",
+    "common": "Potion",
+    "rare": "Hi-Potion",
+    "commonId": "potion",
+    "rareId": "hi-potion"
+  },
+  {
+    "monster": "Black Goblin",
+    "id": "black-goblin",
+    "common": "Antidote",
+    "rare": "Hi-Potion",
+    "commonId": "antidote",
+    "rareId": "hi-potion"
+  },
+  {
+    "monster": "Gobbledeguck",
+    "id": "gobbledeguck",
+    "common": "Mage Masher",
+    "rare": "Ancient Sword",
+    "commonId": "mage-masher",
+    "rareId": "ancient-sword"
+  },
+  {
+    "monster": "Bomb",
+    "id": "bomb",
+    "common": "Fire Ball",
+    "rare": "Flame Rod",
+    "commonId": "fire-ball",
+    "rareId": "flame-rod"
+  },
+  {
+    "monster": "Grenade",
+    "id": "grenade",
+    "common": "Water Ball",
+    "rare": "Flame Whip",
+    "commonId": "water-ball",
+    "rareId": "flame-whip"
+  },
+  {
+    "monster": "Explosive",
+    "id": "explosive",
+    "common": "Lightning Ball",
+    "rare": "Flame Shield",
+    "commonId": "lightning-ball",
+    "rareId": "flame-shield"
+  },
+  {
+    "monster": "Red Panther",
+    "id": "red-panther",
+    "common": "Antidote",
+    "rare": "Battle Boots",
+    "commonId": "antidote",
+    "rareId": "battle-boots"
+  },
+  {
+    "monster": "Cuar",
+    "id": "cuar",
+    "common": "Soft",
+    "rare": "Germinas Boots",
+    "commonId": "soft",
+    "rareId": "germinas-boots"
+  },
+  {
+    "monster": "Vampire",
+    "id": "vampire",
+    "common": "Holy Water",
+    "rare": "C Bag",
+    "commonId": "holy-water",
+    "rareId": "c-bag"
+  },
+  {
+    "monster": "Pisco Demon",
+    "id": "pisco-demon",
+    "common": "Echo Grass",
+    "rare": "Hi-Potion",
+    "commonId": "echo-grass",
+    "rareId": "hi-potion"
+  },
+  {
+    "monster": "Squidlarkin",
+    "id": "squidlarkin",
+    "common": "Small Mantle",
+    "rare": "Sleep Sword",
+    "commonId": "small-mantle",
+    "rareId": "sleep-sword"
+  },
+  {
+    "monster": "Mind Flare",
+    "id": "mind-flare",
+    "common": "Hi-Ether",
+    "rare": "Dracula Mantle",
+    "commonId": "hi-ether",
+    "rareId": "dracula-mantle"
+  },
+  {
+    "monster": "Skeleton",
+    "id": "skeleton",
+    "common": "Holy Water",
+    "rare": "Ether",
+    "commonId": "holy-water",
+    "rareId": "ether"
+  },
+  {
+    "monster": "Bone Snatch",
+    "id": "bone-snatch",
+    "common": "Hi-Potion",
+    "rare": "Partisan",
+    "commonId": "hi-potion",
+    "rareId": "partisan"
+  },
+  {
+    "monster": "Living Bone",
+    "id": "living-bone",
+    "common": "Wizard Mantle",
+    "rare": "Elf Mantle",
+    "commonId": "wizard-mantle",
+    "rareId": "elf-mantle"
+  },
+  {
+    "monster": "Ghoul",
+    "id": "ghoul",
+    "common": "Ether",
+    "rare": "Ninja Knife",
+    "commonId": "ether",
+    "rareId": "ninja-knife"
+  },
+  {
+    "monster": "Gust",
+    "id": "gust",
+    "common": "Hi-Potion",
+    "rare": "Main Gauche",
+    "commonId": "hi-potion",
+    "rareId": "main-gauche"
+  },
+  {
+    "monster": "Revnant",
+    "id": "revnant",
+    "common": "Hi-Ether",
+    "rare": "Mythril Gun",
+    "commonId": "hi-ether",
+    "rareId": "mythril-gun"
+  },
+  {
+    "monster": "Flotiball",
+    "id": "flotiball",
+    "common": "Shuriken",
+    "rare": "Platina Dagger",
+    "commonId": "shuriken",
+    "rareId": "platina-dagger"
+  },
+  {
+    "monster": "Ahriman",
+    "id": "ahriman",
+    "common": "Magic Shuriken",
+    "rare": "Air Knife",
+    "commonId": "magic-shuriken",
+    "rareId": "air-knife"
+  },
+  {
+    "monster": "Plague",
+    "id": "plague",
+    "common": "Yagyu Darkness",
+    "rare": "Zorlin Shape",
+    "commonId": "yagyu-darkness",
+    "rareId": "zorlin-shape"
+  },
+  {
+    "monster": "Juravis",
+    "id": "juravis",
+    "common": "Potion",
+    "rare": "Rubber Shoes",
+    "commonId": "potion",
+    "rareId": "rubber-shoes"
+  },
+  {
+    "monster": "Steel Hawk",
+    "id": "steel-hawk",
+    "common": "Phoenix Down",
+    "rare": "Hunting Bow",
+    "commonId": "phoenix-down",
+    "rareId": "hunting-bow"
+  },
+  {
+    "monster": "Cocatoris",
+    "id": "cocatoris",
+    "common": "Soft",
+    "rare": "Feather Mantle",
+    "commonId": "soft",
+    "rareId": "feather-mantle"
+  },
+  {
+    "monster": "Porky",
+    "id": "porky",
+    "common": "Chantage",
+    "rare": "Nagrarock",
+    "commonId": "chantage",
+    "rareId": "nagrarock"
+  },
+  {
+    "monster": "Wildbow",
+    "id": "wildbow",
+    "common": "Ribbon",
+    "rare": "FS Bag",
+    "commonId": "ribbon",
+    "rareId": "fs-bag"
+  },
+  {
+    "monster": "Woodman",
+    "id": "woodman",
+    "common": "Eye Drops",
+    "rare": "Healing Staff",
+    "commonId": "eye-drops",
+    "rareId": "healing-staff"
+  },
+  {
+    "monster": "Trent",
+    "id": "trent",
+    "common": "Gold Staff",
+    "rare": "Fairy Harp",
+    "commonId": "gold-staff",
+    "rareId": "fairy-harp"
+  },
+  {
+    "monster": "Taiju",
+    "id": "taiju",
+    "common": "Defense Ring",
+    "rare": "Defender",
+    "commonId": "defense-ring",
+    "rareId": "defender"
+  },
+  {
+    "monster": "Bull Demon",
+    "id": "bull-demon",
+    "common": "Battle Axe",
+    "rare": "Giant Axe",
+    "commonId": "battle-axe",
+    "rareId": "giant-axe"
+  },
+  {
+    "monster": "Minitaurus",
+    "id": "minitaurus",
+    "common": "Coral Sword",
+    "rare": "Slasher",
+    "commonId": "coral-sword",
+    "rareId": "slasher"
+  },
+  {
+    "monster": "Sacred",
+    "id": "sacred",
+    "common": "Ivory Rod",
+    "rare": "Holy Lance",
+    "commonId": "ivory-rod",
+    "rareId": "holy-lance"
+  },
+  {
+    "monster": "Morbol",
+    "id": "morbol",
+    "common": "Platina Dagger",
+    "rare": "Ice Shield",
+    "commonId": "platina-dagger",
+    "rareId": "ice-shield"
+  }
+]

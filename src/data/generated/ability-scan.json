@@ -1,0 +1,1354 @@
+[
+  {
+    "name": "Accumulate",
+    "jp": 300
+  },
+  {
+    "name": "Dash",
+    "jp": 80
+  },
+  {
+    "name": "Throw Stone",
+    "jp": 90
+  },
+  {
+    "name": "Heal",
+    "jp": 150
+  },
+  {
+    "name": "Counter Tackle",
+    "jp": 180
+  },
+  {
+    "name": "Equip Axe",
+    "jp": 170
+  },
+  {
+    "name": "Monster Skill",
+    "jp": 200
+  },
+  {
+    "name": "Defend",
+    "jp": 50
+  },
+  {
+    "name": "Gained JP UP",
+    "jp": 200
+  },
+  {
+    "name": "Move +1",
+    "jp": 200
+  },
+  {
+    "name": "Head Break",
+    "jp": 300
+  },
+  {
+    "name": "Armor Break",
+    "jp": 400
+  },
+  {
+    "name": "Shield Break",
+    "jp": 300
+  },
+  {
+    "name": "Weapon Break",
+    "jp": 400
+  },
+  {
+    "name": "Magic Break",
+    "jp": 250
+  },
+  {
+    "name": "Speed Break",
+    "jp": 250
+  },
+  {
+    "name": "Power Break",
+    "jp": 250
+  },
+  {
+    "name": "Mind Break",
+    "jp": 250
+  },
+  {
+    "name": "Weapon Guard",
+    "jp": 200
+  },
+  {
+    "name": "Equip Armor",
+    "jp": 500
+  },
+  {
+    "name": "Equip Shield",
+    "jp": 250
+  },
+  {
+    "name": "Equip Sword",
+    "jp": 400
+  },
+  {
+    "name": "Charge +1",
+    "jp": 100
+  },
+  {
+    "name": "Charge +2",
+    "jp": 150
+  },
+  {
+    "name": "Charge +3",
+    "jp": 200
+  },
+  {
+    "name": "Charge +4",
+    "jp": 250
+  },
+  {
+    "name": "Charge +5",
+    "jp": 300
+  },
+  {
+    "name": "Charge +7",
+    "jp": 400
+  },
+  {
+    "name": "Charge +10",
+    "jp": 600
+  },
+  {
+    "name": "Charge +20",
+    "jp": 1000
+  },
+  {
+    "name": "Speed Save",
+    "jp": 800
+  },
+  {
+    "name": "Arrow Guard",
+    "jp": 450
+  },
+  {
+    "name": "Equip Crossbow",
+    "jp": 350
+  },
+  {
+    "name": "Concentrate",
+    "jp": 400
+  },
+  {
+    "name": "Jump +1",
+    "jp": 200
+  },
+  {
+    "name": "Spin Fist",
+    "jp": 150
+  },
+  {
+    "name": "Repeating Fist",
+    "jp": 300
+  },
+  {
+    "name": "Wave Fist",
+    "jp": 300
+  },
+  {
+    "name": "Earth Slash",
+    "jp": 600
+  },
+  {
+    "name": "Secret Fist",
+    "jp": 300
+  },
+  {
+    "name": "Stigma Magic",
+    "jp": 200
+  },
+  {
+    "name": "Chakra",
+    "jp": 350
+  },
+  {
+    "name": "Revive",
+    "jp": 500
+  },
+  {
+    "name": "HP Restore",
+    "jp": 500
+  },
+  {
+    "name": "Counter",
+    "jp": 300
+  },
+  {
+    "name": "Hamedo",
+    "jp": 1200
+  },
+  {
+    "name": "Martial Arts",
+    "jp": 200
+  },
+  {
+    "name": "Move-HP Up",
+    "jp": 300
+  },
+  {
+    "name": "Gil Taking",
+    "jp": 10
+  },
+  {
+    "name": "Steal Heart",
+    "jp": 150
+  },
+  {
+    "name": "Steal Helmet",
+    "jp": 350
+  },
+  {
+    "name": "Steal Armor",
+    "jp": 450
+  },
+  {
+    "name": "Steal Shield",
+    "jp": 350
+  },
+  {
+    "name": "Steal Weapon",
+    "jp": 600
+  },
+  {
+    "name": "Steal Accessry",
+    "jp": 500
+  },
+  {
+    "name": "Steal Exp",
+    "jp": 250
+  },
+  {
+    "name": "Caution",
+    "jp": 200
+  },
+  {
+    "name": "Gilgame Heart",
+    "jp": 200
+  },
+  {
+    "name": "Catch",
+    "jp": 200
+  },
+  {
+    "name": "Secret Hunt",
+    "jp": 200
+  },
+  {
+    "name": "Move +2",
+    "jp": 520
+  },
+  {
+    "name": "Jump +2",
+    "jp": 480
+  },
+  {
+    "name": "Pitfall",
+    "jp": 150
+  },
+  {
+    "name": "Water Ball",
+    "jp": 150
+  },
+  {
+    "name": "Hell Ivy",
+    "jp": 150
+  },
+  {
+    "name": "Carve Model",
+    "jp": 150
+  },
+  {
+    "name": "Local Quake",
+    "jp": 150
+  },
+  {
+    "name": "Kamaitachi",
+    "jp": 150
+  },
+  {
+    "name": "Demon Fire",
+    "jp": 150
+  },
+  {
+    "name": "Quicksand",
+    "jp": 150
+  },
+  {
+    "name": "Sand Storm",
+    "jp": 150
+  },
+  {
+    "name": "Blizzard",
+    "jp": 150
+  },
+  {
+    "name": "Gusty Wind",
+    "jp": 150
+  },
+  {
+    "name": "Lava Ball",
+    "jp": 150
+  },
+  {
+    "name": "Counter Flood",
+    "jp": 300
+  },
+  {
+    "name": "Attack UP",
+    "jp": 400
+  },
+  {
+    "name": "Any Ground",
+    "jp": 220
+  },
+  {
+    "name": "Move on Lava",
+    "jp": 150
+  },
+  {
+    "name": "Level Jump2",
+    "jp": 150
+  },
+  {
+    "name": "Level Jump3",
+    "jp": 300
+  },
+  {
+    "name": "Level Jump4",
+    "jp": 450
+  },
+  {
+    "name": "Level Jump5",
+    "jp": 600
+  },
+  {
+    "name": "Level Jump8",
+    "jp": 900
+  },
+  {
+    "name": "Vertical Jump2",
+    "jp": 100
+  },
+  {
+    "name": "Vertical Jump3",
+    "jp": 200
+  },
+  {
+    "name": "Vertical Jump4",
+    "jp": 300
+  },
+  {
+    "name": "Vertical Jump5",
+    "jp": 400
+  },
+  {
+    "name": "Vertical Jump6",
+    "jp": 500
+  },
+  {
+    "name": "Vertical Jump7",
+    "jp": 600
+  },
+  {
+    "name": "Vertical Jump8",
+    "jp": 900
+  },
+  {
+    "name": "Dragon Spirit",
+    "jp": 560
+  },
+  {
+    "name": "Equip Spear",
+    "jp": 400
+  },
+  {
+    "name": "Ignore Height",
+    "jp": 700
+  },
+  {
+    "name": "Witch Hunt",
+    "jp": 17
+  },
+  {
+    "name": "Wiznaibus",
+    "jp": 17
+  },
+  {
+    "name": "Slow Dance",
+    "jp": 13
+  },
+  {
+    "name": "Polka Polka",
+    "jp": 13
+  },
+  {
+    "name": "Disillusion",
+    "jp": 10
+  },
+  {
+    "name": "Last Dance",
+    "jp": 100
+  },
+  {
+    "name": "A Save",
+    "jp": 550
+  },
+  {
+    "name": "Brave Up",
+    "jp": 500
+  },
+  {
+    "name": "Jump +3",
+    "jp": 1000
+  },
+  {
+    "name": "Fly",
+    "jp": 1200
+  },
+  {
+    "name": "Potion",
+    "jp": 30
+  },
+  {
+    "name": "Hi-Potion",
+    "jp": 200
+  },
+  {
+    "name": "X-Potion",
+    "jp": 300
+  },
+  {
+    "name": "Ether",
+    "jp": 20
+  },
+  {
+    "name": "Hi-Ether",
+    "jp": 400
+  },
+  {
+    "name": "Elixir",
+    "jp": 900
+  },
+  {
+    "name": "Antidote",
+    "jp": 70
+  },
+  {
+    "name": "Eye Drop",
+    "jp": 80
+  },
+  {
+    "name": "Echo Grass",
+    "jp": 120
+  },
+  {
+    "name": "Maiden's Kiss",
+    "jp": 200
+  },
+  {
+    "name": "Soft",
+    "jp": 250
+  },
+  {
+    "name": "Holy Water",
+    "jp": 400
+  },
+  {
+    "name": "Remedy",
+    "jp": 700
+  },
+  {
+    "name": "Phoenix Down",
+    "jp": 90
+  },
+  {
+    "name": "Auto Potion",
+    "jp": 400
+  },
+  {
+    "name": "Throw Item",
+    "jp": 350
+  },
+  {
+    "name": "Maintenance",
+    "jp": 250
+  },
+  {
+    "name": "Move-Find Item",
+    "jp": 100
+  },
+  {
+    "name": "Cure",
+    "jp": 25
+  },
+  {
+    "name": "Cure 2",
+    "jp": 10
+  },
+  {
+    "name": "Cure 3",
+    "jp": 16
+  },
+  {
+    "name": "Cure 4",
+    "jp": 20
+  },
+  {
+    "name": "Raise",
+    "jp": 10
+  },
+  {
+    "name": "Raise 2",
+    "jp": 20
+  },
+  {
+    "name": "Reraise",
+    "jp": 16
+  },
+  {
+    "name": "Regen",
+    "jp": 25
+  },
+  {
+    "name": "Protect",
+    "jp": 25
+  },
+  {
+    "name": "Protect 2",
+    "jp": 24
+  },
+  {
+    "name": "Shell",
+    "jp": 25
+  },
+  {
+    "name": "Shell 2",
+    "jp": 20
+  },
+  {
+    "name": "Wall",
+    "jp": 24
+  },
+  {
+    "name": "Esuna",
+    "jp": 18
+  },
+  {
+    "name": "Holy",
+    "jp": 56
+  },
+  {
+    "name": "Regenerator",
+    "jp": 400
+  },
+  {
+    "name": "Magic DefendUP",
+    "jp": 400
+  },
+  {
+    "name": "Fire",
+    "jp": 25
+  },
+  {
+    "name": "Fire 2",
+    "jp": 12
+  },
+  {
+    "name": "Fire 3",
+    "jp": 24
+  },
+  {
+    "name": "Fire 4",
+    "jp": 48
+  },
+  {
+    "name": "Bolt",
+    "jp": 25
+  },
+  {
+    "name": "Bolt 2",
+    "jp": 10
+  },
+  {
+    "name": "Bolt 3",
+    "jp": 24
+  },
+  {
+    "name": "Bolt 4",
+    "jp": 48
+  },
+  {
+    "name": "Ice",
+    "jp": 25
+  },
+  {
+    "name": "Ice 2",
+    "jp": 12
+  },
+  {
+    "name": "Ice 3",
+    "jp": 24
+  },
+  {
+    "name": "Ice 4",
+    "jp": 48
+  },
+  {
+    "name": "Poison",
+    "jp": 34
+  },
+  {
+    "name": "Frog",
+    "jp": 12
+  },
+  {
+    "name": "Death",
+    "jp": 24
+  },
+  {
+    "name": "Flare",
+    "jp": 60
+  },
+  {
+    "name": "Counter Magic",
+    "jp": 800
+  },
+  {
+    "name": "Magic AttackUP",
+    "jp": 400
+  },
+  {
+    "name": "Blind",
+    "jp": 50
+  },
+  {
+    "name": "Spell Absorb",
+    "jp": 50
+  },
+  {
+    "name": "Life Drain",
+    "jp": 16
+  },
+  {
+    "name": "Pray Faith",
+    "jp": 25
+  },
+  {
+    "name": "Doubt Faith",
+    "jp": 25
+  },
+  {
+    "name": "Zombie",
+    "jp": 20
+  },
+  {
+    "name": "Silence Song",
+    "jp": 16
+  },
+  {
+    "name": "Blind Rage",
+    "jp": 16
+  },
+  {
+    "name": "Foxbird",
+    "jp": 20
+  },
+  {
+    "name": "Confusion Song",
+    "jp": 20
+  },
+  {
+    "name": "Dispel Magic",
+    "jp": 34
+  },
+  {
+    "name": "Paralyze",
+    "jp": 10
+  },
+  {
+    "name": "Sleep",
+    "jp": 24
+  },
+  {
+    "name": "Petrify",
+    "jp": 16
+  },
+  {
+    "name": "Absorb Used MP",
+    "jp": 250
+  },
+  {
+    "name": "Defense UP",
+    "jp": 400
+  },
+  {
+    "name": "Any Weather",
+    "jp": 200
+  },
+  {
+    "name": "Move-MP Up",
+    "jp": 350
+  },
+  {
+    "name": "Haste",
+    "jp": 50
+  },
+  {
+    "name": "Haste 2",
+    "jp": 30
+  },
+  {
+    "name": "Slow",
+    "jp": 50
+  },
+  {
+    "name": "Slow 2",
+    "jp": 30
+  },
+  {
+    "name": "Stop",
+    "jp": 14
+  },
+  {
+    "name": "Don't Move",
+    "jp": 10
+  },
+  {
+    "name": "Float",
+    "jp": 50
+  },
+  {
+    "name": "Reflect",
+    "jp": 12
+  },
+  {
+    "name": "Quick",
+    "jp": 24
+  },
+  {
+    "name": "Demi",
+    "jp": 24
+  },
+  {
+    "name": "Demi 2",
+    "jp": 50
+  },
+  {
+    "name": "Meteor",
+    "jp": 70
+  },
+  {
+    "name": "Critical Quick",
+    "jp": 700
+  },
+  {
+    "name": "MP Switch",
+    "jp": 400
+  },
+  {
+    "name": "Short Charge",
+    "jp": 800
+  },
+  {
+    "name": "Teleport",
+    "jp": 600
+  },
+  {
+    "name": "Float",
+    "jp": 540
+  },
+  {
+    "name": "Invitation",
+    "jp": 100
+  },
+  {
+    "name": "Persuade",
+    "jp": 100
+  },
+  {
+    "name": "Praise",
+    "jp": 200
+  },
+  {
+    "name": "Threaten",
+    "jp": 200
+  },
+  {
+    "name": "Preach",
+    "jp": 200
+  },
+  {
+    "name": "Solution",
+    "jp": 200
+  },
+  {
+    "name": "Death Sentence",
+    "jp": 500
+  },
+  {
+    "name": "Negotiate",
+    "jp": 100
+  },
+  {
+    "name": "Insult",
+    "jp": 300
+  },
+  {
+    "name": "Mimic Daravon",
+    "jp": 300
+  },
+  {
+    "name": "Finger Guard",
+    "jp": 300
+  },
+  {
+    "name": "Equip Gun",
+    "jp": 750
+  },
+  {
+    "name": "Train",
+    "jp": 450
+  },
+  {
+    "name": "Monster Talk",
+    "jp": 100
+  },
+  {
+    "name": "Moogle",
+    "jp": 50
+  },
+  {
+    "name": "Shiva",
+    "jp": 24
+  },
+  {
+    "name": "Ramuh",
+    "jp": 24
+  },
+  {
+    "name": "Ifrit",
+    "jp": 24
+  },
+  {
+    "name": "Titan",
+    "jp": 30
+  },
+  {
+    "name": "Golem",
+    "jp": 40
+  },
+  {
+    "name": "Carbunkle",
+    "jp": 30
+  },
+  {
+    "name": "Bahamut",
+    "jp": 60
+  },
+  {
+    "name": "Odin",
+    "jp": 50
+  },
+  {
+    "name": "Leviathan",
+    "jp": 48
+  },
+  {
+    "name": "Salamander",
+    "jp": 48
+  },
+  {
+    "name": "Silf",
+    "jp": 26
+  },
+  {
+    "name": "Fairy",
+    "jp": 28
+  },
+  {
+    "name": "Lich",
+    "jp": 40
+  },
+  {
+    "name": "Cyclops",
+    "jp": 62
+  },
+  {
+    "name": "Zodiac",
+    "jp": 99
+  },
+  {
+    "name": "MP Restore",
+    "jp": 400
+  },
+  {
+    "name": "Half of MP",
+    "jp": 900
+  },
+  {
+    "name": "Angel Song",
+    "jp": 17
+  },
+  {
+    "name": "Life Song",
+    "jp": 17
+  },
+  {
+    "name": "Cheer Song",
+    "jp": 13
+  },
+  {
+    "name": "Battle Song",
+    "jp": 13
+  },
+  {
+    "name": "Magic Song",
+    "jp": 10
+  },
+  {
+    "name": "Nameless Song",
+    "jp": 10
+  },
+  {
+    "name": "Last Song",
+    "jp": 100
+  },
+  {
+    "name": "MA Save",
+    "jp": 450
+  },
+  {
+    "name": "Face Up",
+    "jp": 500
+  },
+  {
+    "name": "Move+3",
+    "jp": 1000
+  },
+  {
+    "name": "Fly",
+    "jp": 1200
+  },
+  {
+    "name": "Asura Knife",
+    "jp": 100
+  },
+  {
+    "name": "Koutetsu",
+    "jp": 180
+  },
+  {
+    "name": "Bizen Boat",
+    "jp": 260
+  },
+  {
+    "name": "Murasame",
+    "jp": 340
+  },
+  {
+    "name": "Heaven's Cloud",
+    "jp": 420
+  },
+  {
+    "name": "Kiyomori",
+    "jp": 500
+  },
+  {
+    "name": "Muramasa",
+    "jp": 580
+  },
+  {
+    "name": "Kikuichimoji",
+    "jp": 660
+  },
+  {
+    "name": "Masamune",
+    "jp": 740
+  },
+  {
+    "name": "Chirijiraden",
+    "jp": 820
+  },
+  {
+    "name": "Meatbone Slash",
+    "jp": 200
+  },
+  {
+    "name": "Blade Grasp",
+    "jp": 700
+  },
+  {
+    "name": "Equip Knife",
+    "jp": 400
+  },
+  {
+    "name": "Two Hands",
+    "jp": 900
+  },
+  {
+    "name": "Walk on Water",
+    "jp": 300
+  },
+  {
+    "name": "Shuriken",
+    "jp": 50
+  },
+  {
+    "name": "Ball",
+    "jp": 70
+  },
+  {
+    "name": "Knife",
+    "jp": 100
+  },
+  {
+    "name": "Sword",
+    "jp": 100
+  },
+  {
+    "name": "Hammer",
+    "jp": 100
+  },
+  {
+    "name": "Katana",
+    "jp": 100
+  },
+  {
+    "name": "Ninja Sword",
+    "jp": 100
+  },
+  {
+    "name": "Axe",
+    "jp": 120
+  },
+  {
+    "name": "Spear",
+    "jp": 100
+  },
+  {
+    "name": "Stick",
+    "jp": 100
+  },
+  {
+    "name": "Knight Sword",
+    "jp": 100
+  },
+  {
+    "name": "Dictionary",
+    "jp": 100
+  },
+  {
+    "name": "Sunken State",
+    "jp": 900
+  },
+  {
+    "name": "Abandon",
+    "jp": 400
+  },
+  {
+    "name": "Two Swords",
+    "jp": 900
+  },
+  {
+    "name": "Move in Water",
+    "jp": 420
+  },
+  {
+    "name": "CT",
+    "jp": 250
+  },
+  {
+    "name": "Level",
+    "jp": 350
+  },
+  {
+    "name": "Exp",
+    "jp": 200
+  },
+  {
+    "name": "Height",
+    "jp": 250
+  },
+  {
+    "name": "Prime Number",
+    "jp": 300
+  },
+  {
+    "name": "Distribute",
+    "jp": 200
+  },
+  {
+    "name": "Damage Split",
+    "jp": 300
+  },
+  {
+    "name": "Gained Exp UP",
+    "jp": 350
+  },
+  {
+    "name": "Move-Get Exp",
+    "jp": 400
+  },
+  {
+    "name": "Move-Get JP",
+    "jp": 360
+  },
+  {
+    "name": "Accumulate",
+    "jp": 300
+  },
+  {
+    "name": "Dash",
+    "jp": 80
+  },
+  {
+    "name": "Heal",
+    "jp": 150
+  },
+  {
+    "name": "Yell",
+    "jp": 200
+  },
+  {
+    "name": "Cheer Up",
+    "jp": 200
+  },
+  {
+    "name": "Scream",
+    "jp": 500
+  },
+  {
+    "name": "Ultima",
+    "jp": 10
+  },
+  {
+    "name": "Split Punch",
+    "jp": 400
+  },
+  {
+    "name": "Crush Punch",
+    "jp": 500
+  },
+  {
+    "name": "Lightning Stab",
+    "jp": 700
+  },
+  {
+    "name": "Holy Explosion",
+    "jp": 800
+  },
+  {
+    "name": "Dark Sword",
+    "jp": 500
+  },
+  {
+    "name": "Night Sword",
+    "jp": 100
+  },
+  {
+    "name": "Leg Aim",
+    "jp": 200
+  },
+  {
+    "name": "Arm Aim",
+    "jp": 300
+  },
+  {
+    "name": "Seal Evil",
+    "jp": 200
+  },
+  {
+    "name": "Heaven Thunder",
+    "jp": 34
+  },
+  {
+    "name": "Asura",
+    "jp": 25
+  },
+  {
+    "name": "Diamond Sword",
+    "jp": 20
+  },
+  {
+    "name": "Hydragon Pit",
+    "jp": 17
+  },
+  {
+    "name": "Space Storage",
+    "jp": 20
+  },
+  {
+    "name": "Sky Demon",
+    "jp": 15
+  },
+  {
+    "name": "Shellbust Stab",
+    "jp": 200
+  },
+  {
+    "name": "Blastar Punch",
+    "jp": 400
+  },
+  {
+    "name": "Hellcry Punch",
+    "jp": 500
+  },
+  {
+    "name": "Icewolf Bite",
+    "jp": 800
+  },
+  {
+    "name": "Split Punch",
+    "jp": 400
+  },
+  {
+    "name": "Crush Punch",
+    "jp": 500
+  },
+  {
+    "name": "Lightning Stab",
+    "jp": 700
+  },
+  {
+    "name": "Holy Explosion",
+    "jp": 800
+  },
+  {
+    "name": "Shellbust Stab",
+    "jp": 200
+  },
+  {
+    "name": "Blastar Punch",
+    "jp": 400
+  },
+  {
+    "name": "Hellcry Punch",
+    "jp": 500
+  },
+  {
+    "name": "Icewolf Bite",
+    "jp": 800
+  },
+  {
+    "name": "Dark Sword",
+    "jp": 500
+  },
+  {
+    "name": "Night Sword",
+    "jp": 100
+  },
+  {
+    "name": "Blind",
+    "jp": 50
+  },
+  {
+    "name": "Aspel",
+    "jp": 100
+  },
+  {
+    "name": "Drain",
+    "jp": 12
+  },
+  {
+    "name": "Faith",
+    "jp": 10
+  },
+  {
+    "name": "Innocent",
+    "jp": 10
+  },
+  {
+    "name": "Zombie",
+    "jp": 14
+  },
+  {
+    "name": "Silence",
+    "jp": 16
+  },
+  {
+    "name": "Berserk",
+    "jp": 16
+  },
+  {
+    "name": "Chicken",
+    "jp": 12
+  },
+  {
+    "name": "Confuse",
+    "jp": 14
+  },
+  {
+    "name": "Despair",
+    "jp": 20
+  },
+  {
+    "name": "Don't Act",
+    "jp": 14
+  },
+  {
+    "name": "Sleep",
+    "jp": 20
+  },
+  {
+    "name": "Break",
+    "jp": 24
+  },
+  {
+    "name": "Dragon Tame",
+    "jp": 300
+  },
+  {
+    "name": "Dragon Care",
+    "jp": 300
+  },
+  {
+    "name": "Dragon PowerUp",
+    "jp": 400
+  },
+  {
+    "name": "Dragon LevelUp",
+    "jp": 400
+  },
+  {
+    "name": "Holy Bracelet",
+    "jp": 900
+  },
+  {
+    "name": "Braver",
+    "jp": 34
+  },
+  {
+    "name": "Cross-Slash",
+    "jp": 25
+  },
+  {
+    "name": "Blade Beam",
+    "jp": 20
+  },
+  {
+    "name": "Climhazzard",
+    "jp": 15
+  },
+  {
+    "name": "Meteorain",
+    "jp": 10
+  },
+  {
+    "name": "Finish Touch",
+    "jp": 20
+  },
+  {
+    "name": "Omnislash",
+    "jp": 900
+  },
+  {
+    "name": "Cherry Blossom",
+    "jp": 1200
+  }
+]
