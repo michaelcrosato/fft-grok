@@ -4,6 +4,7 @@ import {
   availablePropositions,
   buyItem,
   commitBattleVictory,
+  completeDeepFloor,
   createGame,
   currentBattleDef,
   dispatchProposition,
@@ -669,7 +670,7 @@ function finishBattle(): void {
     return
   }
   if (battle.id.startsWith('deep-') && battle.result === 'victory' && battle.exitBy === 'player') {
-    campaign.deepFloor += 1
+    completeDeepFloor(campaign, campaign.deepFloor + 1, true)
   }
   battle = null
   mode = 'world'

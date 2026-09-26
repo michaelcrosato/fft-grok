@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { advanceClock, enemyTakeTurn } from '../src/core/battle'
 import { absorbBattleLoot, commitBattleVictory, createGame, instantiateBattle } from '../src/core/campaign'
-import { STORY } from '../src/data/story'
+import { REQUIRED_STORY_IDS, STORY } from '../src/data/story'
 
 function fight(game: ReturnType<typeof createGame>, limit = 2500) {
   const field = instantiateBattle(game)
@@ -22,10 +22,12 @@ describe('auto resolves the chronicle', () => {
   it('wins every story battle through the ending with the shipped clock', () => {
     let game = createGame('Ramza', 1, 1)
     const stuck: string[] = []
+    const won: string[] = []
     for (const battle of STORY) {
       const { field, guard } = fight(game)
       if (field.id !== battle.id) stuck.push(`${battle.id} opened ${field.id}`)
       if (field.result === 'victory') {
+        won.push(field.id)
         absorbBattleLoot(game, field)
         game = commitBattleVictory(game)
       } else {
@@ -35,6 +37,9 @@ describe('auto resolves the chronicle', () => {
       }
     }
     expect(stuck).toEqual([])
+    expect(won[0]).toBe('prologue-orbonne')
+    expect(won.slice(1)).toEqual([...REQUIRED_STORY_IDS])
+    expect(won.at(-1)).toBe('2.4v')
     expect(game.phase).toBe('ending')
   }, 180000)
 

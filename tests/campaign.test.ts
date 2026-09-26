@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { buyItem, commitBattleVictory, createGame, dispatchProposition, encounterBattle, inviteSpecies, performSecret, rareBattle, resolveErrands, rollEncounter, secretAvailable, startDeepFloor, tavernRecruits } from '../src/core/campaign'
+import { buyItem, commitBattleVictory, completeDeepFloor, createGame, dispatchProposition, encounterBattle, inviteSpecies, performSecret, rareBattle, resolveErrands, rollEncounter, secretAvailable, startDeepFloor, tavernRecruits } from '../src/core/campaign'
 import { buildChecklist, coverageRatio } from '../src/core/checklist'
 import { learnZodiacBySurvival } from '../src/core/battle'
 import { scriptedRng } from '../src/core/rng'
@@ -79,17 +79,24 @@ describe('campaign from a new game through the ending', () => {
     expect(performSecret(game, 'cloud')).toBe(true)
     expect(game.party.some((unit) => unit.unique === 'cloud')).toBe(true)
     expect(game.inventory['materia-blade']).toBeGreaterThan(0)
-    const floor = startDeepFloor(game, 1)
-    expect(floor).not.toBeNull()
-    expect(floor?.dark).toBe(true)
-    expect(floor?.hiddenExits.length).toBe(4)
-    game.deepFloor = 9
+    for (let floor = 1; floor <= 10; floor++) {
+      const battle = startDeepFloor(game, floor)
+      expect(battle).not.toBeNull()
+      expect(battle?.dark).toBe(true)
+      expect(battle?.hiddenExits.length).toBe(4)
+      if (floor === 10) {
+        expect(battle?.objectiveType).toBe('defeat-one')
+        expect(battle?.units.some((unit) => unit.name === 'Elidibs')).toBe(true)
+      }
+      completeDeepFloor(game, floor, true)
+      expect(game.deepFloor).toBe(floor)
+    }
     const end = startDeepFloor(game, 10)
-    expect(end?.dark).toBe(true)
+    expect(end).toBeNull()
     const summoner = blankUnit({ name: 'Voice', job: 'summoner', sex: 'female', zodiac: 'virgo' })
     expect(learnZodiacBySurvival(summoner, 40, 12)).toBe(true)
     expect(summoner.learned).toContain('summoner-zodiac')
-    game.deepFloor = 10
+    expect(game.deepFloor).toBe(10)
     expect(performSecret(game, 'byblos')).toBe(true)
     expect(game.party.some((unit) => unit.unique === 'byblos')).toBe(true)
     const rare = rareBattle(game, 'bariaus-monsters')
