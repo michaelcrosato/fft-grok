@@ -1,4 +1,4 @@
-import { ITEMS, PARSED_MAPS, classByIndex, moveFindPool, poachDrop, shopStock } from '../data/content'
+import { ITEMS, PARSED_MAPS, classByIndex, isWeapon, moveFindPool, poachDrop, shopStock, type ItemDef } from '../data/content'
 import { JOBS, innateAbilityIds } from '../data/jobs'
 import { STORY, nextStoryId, storyById, type SpawnSpec, type StoryBattleDef } from '../data/story'
 import { makeBattle, type Battle, type Tile } from './battle'
@@ -6,11 +6,14 @@ import { levelUpRaw } from './growth'
 import { mulberry32, type Rng } from './rng'
 import {
   blankUnit,
+  canEquip,
   cloneUnit,
   equipItem,
   femaleRaw,
   maleRaw,
+  permanentBraveFaith,
   refreshVitals,
+  weaponItem,
   type Unit,
 } from './unit'
 import { zodiacFromBirthday, type Zodiac } from './zodiac'
@@ -174,13 +177,70 @@ function spawnUnit(spec: SpawnSpec, side: 'guest' | 'enemy', zodiac: Zodiac, ind
     unit.raw.ma = levelUpRaw(unit.raw.ma, growth.c.ma, unit.level)
     unit.level += 1
   }
-  if (spec.weapon) equipItem(unit, spec.weapon)
   if (spec.beast) unit.beast = true
   refreshVitals(unit, true)
+  if (!spec.weapon) {
+    const kit = kitWeapon(unit, 200 + spec.level * 160)
+    if (kit) equipItem(unit, kit)
+  }
+  if (spec.weapon) equipItem(unit, spec.weapon)
   for (const id of innateAbilityIds(unit.job)) {
     if (!unit.learned.includes(id)) unit.learned.push(id)
   }
   return unit
+}
+
+/** A shop weapon is worth carrying only when it outdamages a bare swing at this unit's stats. */
+function bestWeapon(unit: Unit, allow: (item: ItemDef) => boolean): ItemDef | null {
+  let best: ItemDef | null = null
+  for (const item of Object.values(ITEMS)) {
+    if (!isWeapon(item.category) || item.wp < 3 || !allow(item) || !canEquip(unit, item.id)) continue
+    if (item.category === 'flail' || item.category === 'axe' || item.category === 'bag') continue
+    if (!best || item.wp > best.wp || (item.wp === best.wp && item.price < best.price)) best = item
+  }
+  return best
+}
+
+function kitWeapon(unit: Unit, budget: number): string | null {
+  const ceiling = Math.min(12, 4 + Math.floor(unit.level / 5))
+  const purse = Math.max(budget, 1800)
+  return bestWeapon(unit, (item) => item.price > 0 && item.price <= purse && item.wp <= ceiling)?.id
+    ?? bestWeapon(unit, (item) => item.wp <= Math.max(ceiling, 4))?.id
+    ?? null
+}
+
+/**
+ * Spend gil on a stronger legal weapon and keep a pouch of hi-potions and phoenix downs.
+ * Called when a story battle is built so the company walks in equipped. A player who has
+ * spent the purse already simply keeps what they own.
+ */
+export function provisionParty(campaign: Campaign): void {
+  const stock = new Set(shopStock(campaign.chapter))
+  const members = [...campaign.party].sort((a, b) => Number(b.unique === 'ramza') - Number(a.unique === 'ramza'))
+  for (const unit of members) {
+    if (unit.sex === 'monster') continue
+    const held = weaponItem(unit)?.wp ?? 0
+    const pick = bestWeapon(unit, (item) => stock.has(item.id) && item.wp > held && item.price <= campaign.gil)
+    if (pick && buyItem(campaign, pick.id)) equipItem(unit, pick.id)
+    if (!weaponItem(unit)) {
+      const issued = kitWeapon(unit, 200 + unit.level * 160)
+      if (issued) equipItem(unit, issued)
+    }
+  }
+  for (const id of ['hi-potion', 'phoenix-down']) {
+    const want = id === 'hi-potion' ? 6 : 4
+    while ((campaign.inventory[id] ?? 0) < want) {
+      if (!buyItem(campaign, id)) break
+    }
+  }
+}
+
+/** Ramza always deploys. The other seats go to the highest-level companions not away on an errand. */
+export function fieldUnits(campaign: Campaign, seats: number): Unit[] {
+  const roster = campaign.party.filter((unit) => !campaign.errands.some((errand) => errand.unitId === unit.id))
+  const ramza = roster.filter((unit) => unit.unique === 'ramza')
+  const rest = roster.filter((unit) => unit.unique !== 'ramza').sort((a, b) => b.level - a.level || a.name.localeCompare(b.name))
+  return [...ramza, ...rest].slice(0, Math.max(1, seats)).map((unit) => cloneUnit(unit))
 }
 
 function hash(text: string): number {
@@ -200,6 +260,7 @@ export function buildMapTiles(id: string, terrain: string): { w: number; h: numb
         tiles.push({ x, y, h: height ?? 0, blocked: height == null, terrain })
       }
     }
+    connectHeights(tiles)
     sprinkleFind(tiles, id)
     return { w: parsed.cols, h: rows.length, tiles }
   }
@@ -217,8 +278,71 @@ export function buildMapTiles(id: string, terrain: string): { w: number; h: numb
       tiles.push({ x, y, h: blocked ? 0 : height, blocked, terrain })
     }
   }
+  connectHeights(tiles)
   sprinkleFind(tiles, id)
   return { w, h, tiles }
+}
+
+/**
+ * Every open tile must be reachable with Jump 3. Isolated pockets, including ones
+ * walled off by void, get a one-tile ramp cut through to the largest region.
+ */
+function connectHeights(tiles: Tile[]): void {
+  const jump = 30
+  const key = (tile: Tile) => `${tile.x},${tile.y}`
+  const byKey = new Map(tiles.map((tile) => [key(tile), tile]))
+  const dirs = [[0, -1], [1, 0], [0, 1], [-1, 0]] as const
+  const components = (): Tile[][] => {
+    const seen = new Set<string>()
+    const groups: Tile[][] = []
+    for (const tile of tiles) {
+      if (tile.blocked || seen.has(key(tile))) continue
+      const group: Tile[] = []
+      const queue = [tile]
+      seen.add(key(tile))
+      while (queue.length) {
+        const current = queue.shift()!
+        group.push(current)
+        for (const [dx, dy] of dirs) {
+          const next = byKey.get(`${current.x + dx},${current.y + dy}`)
+          if (!next || next.blocked || seen.has(key(next))) continue
+          if (Math.abs(next.h - current.h) > jump) continue
+          seen.add(key(next))
+          queue.push(next)
+        }
+      }
+      groups.push(group)
+    }
+    return groups
+  }
+  for (let guard = 0; guard < tiles.length; guard++) {
+    const groups = components()
+    if (groups.length <= 1) return
+    groups.sort((a, b) => b.length - a.length)
+    const main = groups[0]
+    const other = groups[1]
+    let pair: { a: Tile; b: Tile; d: number } | null = null
+    for (const a of main) {
+      for (const b of other) {
+        const d = Math.abs(a.x - b.x) + Math.abs(a.y - b.y)
+        if (!pair || d < pair.d) pair = { a, b, d }
+      }
+    }
+    if (!pair) return
+    let x = pair.a.x
+    let y = pair.a.y
+    let h = pair.a.h
+    while (x !== pair.b.x || y !== pair.b.y) {
+      if (x !== pair.b.x) x += Math.sign(pair.b.x - x)
+      else y += Math.sign(pair.b.y - y)
+      const tile = byKey.get(`${x},${y}`)
+      if (!tile) break
+      tile.blocked = false
+      if (tile.h > h + jump) tile.h = h + jump
+      if (tile.h < h - jump) tile.h = h - jump
+      h = tile.h
+    }
+  }
 }
 
 function sprinkleFind(tiles: Tile[], id: string): void {
@@ -249,16 +373,22 @@ function place(units: Unit[], tiles: Tile[], side: 'player' | 'enemy'): void {
 export function instantiateBattle(campaign: Campaign, rng: Rng = mulberry32(hash(campaign.pending ?? 'x'))): Battle | null {
   const def = currentBattleDef(campaign)
   if (!def) return null
+  provisionParty(campaign)
   const map = buildMapTiles(def.id, def.terrain)
   const guests = def.guests.map((spec, index) => spawnUnit(spec, 'guest', campaign.zodiac, index))
   if (def.id === '2.2b' && campaign.choices['save-boco'] !== 'save') {
     const boco = guests.find((unit) => unit.unique === 'boco')
     if (boco) boco.required = false
   }
-  const enemies = def.enemies.map((spec, index) => spawnUnit(spec, 'enemy', index % 2 ? 'taurus' : 'leo', index))
-  const deployMax = def.deploy
+  const hero = campaign.party.find((unit) => unit.unique === 'ramza') ?? campaign.party[0]
+  const partyLevel = Math.max(1, hero?.level ?? 1)
+  const enemies = def.enemies.map((spec, index) => {
+    const bump = spec.objective || spec.unique ? 1 : 0
+    const level = Math.min(spec.level, partyLevel + bump)
+    return spawnUnit({ ...spec, level }, 'enemy', index % 2 ? 'taurus' : 'leo', index)
+  })
   const roster = campaign.party.filter((unit) => !campaign.errands.some((errand) => errand.unitId === unit.id))
-  const deployed = roster.slice(0, Math.max(1, deployMax - guests.length)).map((unit) => cloneUnit(unit))
+  const deployed = roster.slice(0, Math.max(1, def.deploy - guests.length)).map((unit) => cloneUnit(unit))
   deployed.forEach((unit) => { unit.side = 'player'; unit.ct = Math.max(unit.ct, 80) })
   const units = [...deployed, ...guests, ...enemies]
   place(units.filter((unit) => unit.side !== 'enemy'), map.tiles, 'player')
@@ -409,7 +539,7 @@ export function encounterBattle(campaign: Campaign, id: string, monsters: string
   const map = buildMapTiles(id, 'wild')
   const level = Math.max(3, campaign.party.reduce((best, unit) => Math.max(best, unit.level), 1))
   const enemies = monsters.map((job, index) => spawnUnit({ name: JOBS[job]?.name ?? job, job, level, sex: 'monster' }, 'enemy', 'aries', index))
-  const deployed = campaign.party.slice(0, 4).map((unit) => cloneUnit(unit))
+  const deployed = fieldUnits(campaign, 4)
   const units = [...deployed, ...enemies]
   place(deployed, map.tiles, 'player')
   place(enemies, map.tiles, 'enemy')
@@ -434,7 +564,7 @@ export function rareBattle(campaign: Campaign, id: string): Battle | null {
     : monsters.map((job) => ({ name: JOBS[job]?.name ?? job, job, level: 42, sex: 'monster' as const }))
   const map = buildMapTiles(rare.id, 'wild')
   const enemies = specs.map((spec, index) => spawnUnit(spec, 'enemy', 'leo', index))
-  const deployed = campaign.party.slice(0, 5).map((unit) => cloneUnit(unit))
+  const deployed = fieldUnits(campaign, 5)
   place(deployed, map.tiles, 'player')
   place(enemies, map.tiles, 'enemy')
   return makeBattle({
@@ -558,7 +688,7 @@ export function startDeepFloor(campaign: Campaign, floor: number): Battle | null
     beast: job === 'lucavi',
     objective: floor === 10 && index === 0,
   }, 'enemy', 'scorpio', index))
-  const deployed = campaign.party.slice(0, 5).map((unit) => cloneUnit(unit))
+  const deployed = fieldUnits(campaign, 5)
   place(deployed, map.tiles, 'player')
   place(enemies, map.tiles, 'enemy')
   const exits = deepExits(floor)
@@ -587,8 +717,31 @@ export function completeDeepFloor(campaign: Campaign, floor: number, usedExit: b
 }
 
 export function absorbBattleLoot(campaign: Campaign, battle: Battle): void {
+  for (const unit of battle.units) {
+    if (unit.side !== 'player') continue
+    const home = campaign.party.find((member) => member.id === unit.id)
+    if (!home) continue
+    if (unit.crystal && home.unique !== 'ramza' && battle.result !== 'victory') {
+      campaign.party = campaign.party.filter((member) => member.id !== home.id)
+      continue
+    }
+    permanentBraveFaith(unit)
+    home.level = unit.level
+    home.exp = unit.exp
+    home.raw = { ...unit.raw }
+    home.jp = { ...unit.jp }
+    home.learned = [...unit.learned]
+    home.brave = unit.brave
+    home.baseBrave = unit.baseBrave
+    home.faith = unit.faith
+    home.baseFaith = unit.baseFaith
+    home.paMod = 0
+    home.maMod = 0
+    home.spMod = 0
+    refreshVitals(home, true)
+  }
   for (const [id, count] of Object.entries(battle.stock)) {
-    if ((campaign.inventory[id] ?? 0) < count) campaign.inventory[id] = count
+    campaign.inventory[id] = count
   }
   for (const [id, count] of Object.entries(battle.fur)) {
     campaign.fur[id] = (campaign.fur[id] ?? 0) + count

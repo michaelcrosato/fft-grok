@@ -29,13 +29,16 @@ export function jobLevelFromJp(jp: number): number {
 }
 
 export function expForAction(actorLevel: number, targetLevel: number, prevKills: number, expUp: boolean): number {
-  let d = -8
-  if (prevKills <= 0) d = 10
-  else if (prevKills === 1) d = 0
-  else if (prevKills === 2) d = -4
-  else if (prevKills === 3) d = -5
-  else if (prevKills === 4) d = -6
-  else if (prevKills === 5) d = -7
+  let d = 0
+  if (prevKills >= 0) {
+    d = -8
+    if (prevKills <= 0) d = 10
+    else if (prevKills === 1) d = 0
+    else if (prevKills === 2) d = -4
+    else if (prevKills === 3) d = -5
+    else if (prevKills === 4) d = -6
+    else if (prevKills === 5) d = -7
+  }
   const base = Math.max(10 + (targetLevel - actorLevel) + d, 1)
   return expUp ? base * 2 : base
 }

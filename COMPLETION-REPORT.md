@@ -42,9 +42,17 @@ These are original to this edition. They are not printed in the guides.
 - The title, the two opening cadets’ default names (Cadet and Apprentice), and every spoken line. Characters, relationships, and outcomes follow the guides — Teta dies at Zeakden, Gafgarion betrays and later falls, Queklain and the other Lucavi are fought, Delita takes the crown, Ramza and Alma leave the official history — but the sentences are new. They are not quotations of the script or the walkthrough.
 - Five proposition errands. The walkthrough describes the system and says it never finished the list.
 - Field maps for battles whose walkthrough section did not include a height grid. Gariland through Fovoham Plains use the printed grids. The other fields are new layouts with the guide’s objective and cast.
-- The dusk pixel direction and the music. Four concepts were drawn first (dusk standard, rain council, zodiac glass, sandstone court). The game uses the dusk palette: indigo stone, torch gold, dried-blood crimson, limestone. Sprites and tones are generated in the game, not taken from a commercial sheet or soundtrack.
+- The dusk pixel direction and the music. Four concepts were drawn first (dusk standard, rain council, zodiac glass, sandstone court). The game uses the dusk palette: indigo stone, torch gold, dried-blood crimson, limestone. Character sprites follow that direction. Tones are generated in the game, not taken from a commercial sheet or soundtrack.
 - Math Skill hits units whose level is divisible by 4 or whose CT is divisible by 5, on the real clock, instead of the full calculator menu. A few rare reactions share the Brave check and a counter or potion effect rather than every unique animation in the mechanics guide.
+- Story enemies are capped at Ramza's level, or one level higher when the guide marks them as the objective. They never go above the printed level. A joined unique who arrives at a high level does not drag the rest of the army up with them.
+- Allies and guests receive 24 extra HP as a field dressing. Enemy totals stay on the printed formula.
+- Enemy beasts in a fight use one third of the compendium's 10× beast HP. `surfaceStat` itself is unchanged, and an unprepared Ramza still loses the Riovanes duel.
+- Before a story battle the company spends gil on the best stable shop weapon each fighter can equip, and restocks hi-potions and phoenix downs. Empty hands get a level-appropriate issued weapon. Flails, axes, and bags are left for the player to choose. Enemy loadouts use the same weapon ceiling.
+- Any unit may drink a carried potion, or use a phoenix down on an adjacent fallen ally. Throwing items at other targets still requires the Chemist command.
+- Isolated tiles on a height map get a one-step ramp so Jump 3 can cross. Printed heights stay where they were already connected.
+- A protect battle is won by defeating the enemies before the guest becomes a crystal.
+- A story victory restores companions who crystallized during that fight. A defeat still removes a generic who became a crystal. Ramza is never removed.
 
 ## How to play
 
-Open `the-zodiac-standard.html`. New Game asks for a name and a birthday, then Orbonne. Arrows, WASD, the on-screen pad, a click, or a gamepad move the same cursor. Act, Wait, Undo, and Menu are the same commands on every device. Options hold mute, volume, a fullscreen and landscape lock, effect quality, and animation speed.
+Open `the-zodiac-standard.html`. New Game asks for a name and a birthday, then Orbonne. Arrows, WASD, the on-screen pad, a click, or a gamepad move the same cursor. Act, Wait, Undo, Auto, and Menu are the same commands on every device. Act can Attack, Drink a carried potion, or use a Phoenix Down on an adjacent fallen unit. Options hold mute, volume, a fullscreen and landscape lock, effect quality, and animation speed.

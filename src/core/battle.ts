@@ -396,12 +396,23 @@ export function applyHp(battle: Battle, unit: Unit, delta: number, source: Unit 
   }
   const before = unit.hp
   unit.hp = Math.max(0, Math.min(maxHp(unit), unit.hp + delta))
+  if (delta < 0 && source && source !== unit) awardAction(source, unit, unit.hp === 0 && before > 0)
   if (unit.hp === 0 && before > 0) down(battle, unit, source)
   if (delta > 0 && unit.hp > 0 && unit.dead) {
     unit.dead = false
     unit.deathCount = null
   }
   checkEnd(battle)
+}
+
+function awardAction(actor: Unit, target: Unit, killed: boolean): void {
+  const prev = actor.kills[target.id] ?? 0
+  gainExp(actor, expForAction(actor.level, target.level, killed ? prev : -1, hasFlag(actor, 'flag:exp-up')))
+  const job = actor.job === 'squire-ramza' ? 'squire' : actor.job
+  const gained = jpForAction(Math.max(1, jobLevel(actor, job)), actor.level, hasFlag(actor, 'flag:jp-up'))
+  grantJp(actor, job, gained)
+  if (actor.job === 'squire-ramza') grantJp(actor, 'squire-ramza', gained)
+  if (killed) actor.kills[target.id] = prev + 1
 }
 
 function down(battle: Battle, unit: Unit, source: Unit | null): void {
@@ -418,20 +429,11 @@ function down(battle: Battle, unit: Unit, source: Unit | null): void {
   unit.ct = 0
   unit.statuses = unit.statuses.filter((status) => status === 'undead')
   battle.log.push(`${unit.name} falls.`)
-  if (source && fighting(source)) {
-    const prev = source.kills[unit.id] ?? 0
-    gainExp(source, expForAction(source.level, unit.level, prev, hasFlag(source, 'flag:exp-up')))
-    const job = source.job === 'squire-ramza' ? 'squire' : source.job
-    const gained = jpForAction(Math.max(1, jobLevel(source, job)), source.level, hasFlag(source, 'flag:jp-up'))
-    grantJp(source, job, gained)
-    if (source.job === 'squire-ramza') grantJp(source, 'squire-ramza', gained)
-    source.kills[unit.id] = prev + 1
-    if (hasFlag(source, 'flag:secret-hunt') && unit.monsterId) {
-      const drop = poachDrop(unit.monsterId, battle.rng.d100())
-      if (drop) {
-        battle.fur[drop] = (battle.fur[drop] ?? 0) + 1
-        battle.log.push(`Poach yields ${drop}.`)
-      }
+  if (source && hasFlag(source, 'flag:secret-hunt') && unit.monsterId) {
+    const drop = poachDrop(unit.monsterId, battle.rng.d100())
+    if (drop) {
+      battle.fur[drop] = (battle.fur[drop] ?? 0) + 1
+      battle.log.push(`Poach yields ${drop}.`)
     }
   }
   if (unit.objective || (battle.objectiveType === 'defeat-one' && unit.id === battle.objectiveUnitId)) {
@@ -467,6 +469,14 @@ function checkEnd(battle: Battle): void {
   if (battle.objectiveType === 'defeat-one') {
     const target = battle.units.find((unit) => unit.id === battle.objectiveUnitId)
     if (target && !fighting(target)) {
+      battle.result = 'victory'
+      battle.phase = 'done'
+    }
+  }
+  if (battle.objectiveType === 'protect') {
+    const target = battle.units.find((unit) => unit.id === battle.objectiveUnitId)
+    if (target && !target.crystal && enemies.length && enemies.every((unit) => !fighting(unit))) {
+      if (!fighting(target)) reviveUnit(battle, target, Math.max(1, idiv(maxHp(target), 2)))
       battle.result = 'victory'
       battle.phase = 'done'
     }
@@ -863,6 +873,37 @@ function addStatus(battle: Battle, unit: Unit, status: string, source: Unit | nu
   if (status === 'frog' || status === 'chicken') applyBrave(unit, Math.min(unit.brave, 9))
 }
 
+const DRINKS: { id: string; heal: number }[] = [
+  { id: 'x-potion', heal: 150 },
+  { id: 'hi-potion', heal: 70 },
+  { id: 'potion', heal: 30 },
+]
+
+/** Any unit may drink a potion they are carrying. Throwing a potion at someone else still needs Chemist. */
+export function drinkStock(battle: Battle, unit: Unit): boolean {
+  if (battle.result || unit.acted || !fighting(unit)) return false
+  const pick = DRINKS.find((row) => (battle.stock[row.id] ?? 0) > 0)
+  if (!pick) return false
+  battle.stock[pick.id] -= 1
+  unit.acted = true
+  battle.undo = null
+  applyHp(battle, unit, pick.heal, null)
+  battle.log.push(`${unit.name} drinks.`)
+  return true
+}
+
+export function phoenixDown(battle: Battle, unit: Unit, target: Unit): boolean {
+  if (battle.result || unit.acted || !fighting(unit)) return false
+  if (!target.dead || target.crystal || (battle.stock['phoenix-down'] ?? 0) <= 0) return false
+  if (Math.abs(unit.x - target.x) + Math.abs(unit.y - target.y) > 1) return false
+  battle.stock['phoenix-down'] -= 1
+  unit.acted = true
+  battle.undo = null
+  reviveUnit(battle, target, Math.max(1, idiv(maxHp(target), 5)))
+  battle.log.push(`${unit.name} uses a phoenix down on ${target.name}.`)
+  return true
+}
+
 export function attackCommand(battle: Battle, unit: Unit, target: Unit): boolean {
   if (unit.acted || !fighting(unit) || !fighting(target)) return false
   if (unit.job === 'mime') return false
@@ -881,31 +922,114 @@ export function commitTurn(battle: Battle, unit: Unit): void {
   else endTurn(battle, unit, 'wait')
 }
 
+function tileKey(x: number, y: number): string {
+  return `${x},${y}`
+}
+
+/** Shortest walk that respects jump and living bodies. The goal tile is included; standing on it is not. */
+function routeTo(battle: Battle, unit: Unit, gx: number, gy: number): Tile[] {
+  const origin = tileAt(battle, unit.x, unit.y)
+  if (!origin) return []
+  const prev = new Map<string, string | null>()
+  const queue = [tileKey(unit.x, unit.y)]
+  prev.set(queue[0], null)
+  const goal = tileKey(gx, gy)
+  while (queue.length) {
+    const key = queue.shift()!
+    if (key === goal) break
+    const [x, y] = key.split(',').map(Number)
+    const from = tileAt(battle, x, y)
+    if (!from) continue
+    for (const [dx, dy] of DIRS) {
+      const nx = x + dx
+      const ny = y + dy
+      const nextKey = tileKey(nx, ny)
+      if (prev.has(nextKey)) continue
+      const to = tileAt(battle, nx, ny)
+      if (!to || to.blocked) continue
+      if (Math.abs(to.h - from.h) > jumpOf(unit) * 10) continue
+      const occupied = unitAt(battle, nx, ny)
+      if (occupied && occupied.id !== unit.id && !(nx === gx && ny === gy)) continue
+      prev.set(nextKey, key)
+      queue.push(nextKey)
+    }
+  }
+  if (!prev.has(goal)) return []
+  const chain: Tile[] = []
+  let cursor: string | null = goal
+  while (cursor) {
+    const [x, y] = cursor.split(',').map(Number)
+    const tile = tileAt(battle, x, y)
+    if (tile) chain.push(tile)
+    cursor = prev.get(cursor) ?? null
+  }
+  chain.reverse()
+  return chain
+}
+
+function stepAlong(battle: Battle, unit: Unit, gx: number, gy: number): Tile | null {
+  const chain = routeTo(battle, unit, gx, gy)
+  if (chain.length < 2) return null
+  const options = new Set(reachable(battle, unit).map((tile) => tileKey(tile.x, tile.y)))
+  let pick: Tile | null = null
+  for (let i = 1; i < chain.length; i++) {
+    const tile = chain[i]
+    if (tile.x === gx && tile.y === gy) break
+    if (!options.has(tileKey(tile.x, tile.y))) break
+    pick = tile
+  }
+  return pick
+}
+
 export function enemyTakeTurn(battle: Battle, unit: Unit): void {
+  if (battle.result) return
   if (unit.chicken) {
     endTurn(battle, unit, 'wait')
     return
   }
-  const foes = battle.units.filter((candidate) => candidate.side !== unit.side && fighting(candidate))
+  const foes = battle.units.filter((candidate) => fighting(candidate) && (
+    unit.side === 'enemy' ? candidate.side !== 'enemy' : candidate.side === 'enemy'
+  ))
   if (foes.length === 0) {
     endTurn(battle, unit, 'wait')
     return
   }
-  const spots = [tileAt(battle, unit.x, unit.y)!, ...reachable(battle, unit)].filter(Boolean)
-  let choice: { x: number; y: number; foe: Unit } | null = null
+  const spots = [tileAt(battle, unit.x, unit.y), ...reachable(battle, unit)].filter((tile): tile is Tile => !!tile)
+  let choice: { x: number; y: number; foe: Unit; score: number } | null = null
   for (const spot of spots) {
     const saved = { x: unit.x, y: unit.y }
     unit.x = spot.x
     unit.y = spot.y
+    const range = new Set(weaponRangeTiles(battle, unit).map((tile) => tileKey(tile.x, tile.y)))
     for (const foe of foes) {
-      if (weaponRangeTiles(battle, unit).some((tile) => tile.x === foe.x && tile.y === foe.y)) {
-        choice = { x: spot.x, y: spot.y, foe }
-        break
-      }
+      if (!range.has(tileKey(foe.x, foe.y))) continue
+      const distance = Math.abs(spot.x - foe.x) + Math.abs(spot.y - foe.y)
+      const score = unit.side === 'enemy'
+        ? foe.hp * 10 - distance
+        : (foe.objective ? 8000 : 0) + (1000 - foe.hp) - distance
+      if (!choice || score > choice.score) choice = { x: spot.x, y: spot.y, foe, score }
     }
     unit.x = saved.x
     unit.y = saved.y
-    if (choice) break
+  }
+  if (unit.side !== 'enemy') {
+    const urgent = battle.units.find((candidate) => (
+      candidate.side !== 'enemy' && candidate.dead && !candidate.crystal && candidate.id !== unit.id && (candidate.deathCount ?? 3) <= 2
+    ))
+    if (urgent && (battle.stock['phoenix-down'] ?? 0) > 0 && (!choice || (urgent.deathCount ?? 3) <= 1)) {
+      if (Math.abs(urgent.x - unit.x) + Math.abs(urgent.y - unit.y) > 1) {
+        const step = stepAlong(battle, unit, urgent.x, urgent.y)
+        if (step) moveUnit(battle, unit, step.x, step.y)
+      }
+      phoenixDown(battle, unit, urgent)
+      commitTurn(battle, unit)
+      return
+    }
+    const hurting = unit.hp * 2 <= maxHp(unit)
+    if (hurting && unit.hp < maxHp(unit) && drinkStock(battle, unit)) {
+      commitTurn(battle, unit)
+      return
+    }
   }
   if (choice) {
     if (choice.x !== unit.x || choice.y !== unit.y) moveUnit(battle, unit, choice.x, choice.y)
@@ -913,8 +1037,12 @@ export function enemyTakeTurn(battle: Battle, unit: Unit): void {
     commitTurn(battle, unit)
     return
   }
-  const nearest = foes.slice().sort((a, b) => dist(unit, a) - dist(unit, b))[0]
-  const step = reachable(battle, unit).sort((a, b) => Math.abs(a.x - nearest.x) + Math.abs(a.y - nearest.y) - (Math.abs(b.x - nearest.x) + Math.abs(b.y - nearest.y)))[0]
+  const focus = foes.slice().sort((a, b) => {
+    if (unit.side === 'enemy') return (b.hp - a.hp) || dist(unit, a) - dist(unit, b)
+    return ((a.objective ? -100 : 0) + dist(unit, a)) - ((b.objective ? -100 : 0) + dist(unit, b))
+  })[0]
+  const step = stepAlong(battle, unit, focus.x, focus.y)
+    ?? reachable(battle, unit).sort((a, b) => Math.abs(a.x - focus.x) + Math.abs(a.y - focus.y) - (Math.abs(b.x - focus.x) + Math.abs(b.y - focus.y)))[0]
   if (step) moveUnit(battle, unit, step.x, step.y)
   commitTurn(battle, unit)
 }

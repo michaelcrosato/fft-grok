@@ -343,7 +343,14 @@ function gearList(unit: Unit): ItemDef[] {
 export function maxHp(unit: Unit): number {
   const cls = classOf(unit)
   const base = surfaceStat(unit.raw.hp, cls.mul.hp, unit.beast)
-  return base + gearList(unit).reduce((sum, item) => sum + item.hp, 0)
+  const gear = gearList(unit).reduce((sum, item) => sum + item.hp, 0)
+  // Allies and guests wear a field dressing. Printed enemy totals stay as they are.
+  const dressing = unit.side === 'enemy' ? 0 : 24
+  let hp = base + gear + dressing
+  // The compendium divides beast HP by 163840 (10× a human). Story enemies use one third of that
+  // so a company at Ramza's level can finish a Lucavi. surfaceStat itself is unchanged.
+  if (unit.beast && unit.side === 'enemy') hp = Math.max(1, Math.trunc(hp / 3))
+  return hp
 }
 
 export function maxMp(unit: Unit): number {

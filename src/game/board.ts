@@ -1,5 +1,12 @@
 import Phaser from 'phaser'
+import heroUrl from './sprites/hero.png'
+import knightUrl from './sprites/knight.png'
+import guestUrl from './sprites/guest.png'
+import enemyUrl from './sprites/enemy.png'
+import mageUrl from './sprites/mage.png'
+import birdUrl from './sprites/bird.png'
 import { onTile, stage } from './stage'
+import type { Unit } from '../core/unit'
 
 const INK = 0x12151c
 const STONE = 0x3c4658
@@ -11,13 +18,25 @@ const PARCHMENT = 0xc8bfb0
 
 export class BoardScene extends Phaser.Scene {
   private gfx!: Phaser.GameObjects.Graphics
+  private actors = new Map<string, Phaser.GameObjects.Image>()
+  private titleFigure!: Phaser.GameObjects.Image
 
   constructor() {
     super('board')
   }
 
+  preload(): void {
+    this.load.image('spr-hero', heroUrl)
+    this.load.image('spr-knight', knightUrl)
+    this.load.image('spr-guest', guestUrl)
+    this.load.image('spr-enemy', enemyUrl)
+    this.load.image('spr-mage', mageUrl)
+    this.load.image('spr-bird', birdUrl)
+  }
+
   create(): void {
     this.gfx = this.add.graphics()
+    this.titleFigure = this.add.image(0, 0, 'spr-hero').setOrigin(0.5, 1).setVisible(false)
     this.input.on('pointerdown', (pointer: Phaser.Input.Pointer) => {
       const hit = this.pick(pointer.x, pointer.y)
       if (hit) onTile(hit.x, hit.y)
@@ -30,7 +49,10 @@ export class BoardScene extends Phaser.Scene {
     this.gfx.clear()
     this.gfx.fillStyle(INK, 1)
     this.gfx.fillRect(0, 0, w, h)
-    if (stage.paint === 'battle' && stage.battle) this.drawBattle(w, h)
+    const inBattle = stage.paint === 'battle' && stage.battle
+    this.titleFigure.setVisible(!inBattle && stage.paint === 'title')
+    if (!inBattle) this.hideActors()
+    if (inBattle) this.drawBattle(w, h)
     else if (stage.paint === 'map') this.drawMap(w, h)
     else this.drawTitle(w, h)
   }
@@ -49,8 +71,9 @@ export class BoardScene extends Phaser.Scene {
         this.diamond(x, y, height, originX, originY, tw, th, color)
       }
     }
-    this.person(originX - tw, originY + th * 3, GOLD)
-    this.person(originX + tw * 1.4, originY + th * 3.4, 0xd7d2c8)
+    this.titleFigure.setVisible(true)
+    this.titleFigure.setPosition(w * 0.16, h * 0.78)
+    this.titleFigure.setScale(Math.min(0.55, (h * 0.42) / this.titleFigure.height))
     if (stage.effects === 'high') {
       this.gfx.fillStyle(CRIMSON, 0.9)
       this.gfx.fillRect(w * 0.08, h * 0.18, 10, h * 0.28)
@@ -100,7 +123,44 @@ export class BoardScene extends Phaser.Scene {
       const tile = battle.tiles.find((candidate) => candidate.x === unit.x && candidate.y === unit.y)
       const p = this.project(unit.x, unit.y, tile?.h ?? 0, originX, originY, tw, th)
       const color = unit.side === 'enemy' ? CRIMSON : unit.side === 'guest' ? 0x7f9a6a : GOLD
-      if (!battle.dark || unit.side !== 'enemy' || !unit.dead) this.person(p.sx, p.sy + th * 0.55, unit.dead ? 0x555555 : color)
+      this.placeActor(unit, p.sx, p.sy + th * 0.92, th, battle.activeId === unit.id, battle.dark)
+    }
+    this.hideActors(new Set(units.map((unit) => unit.id)))
+  }
+
+  private textureFor(unit: Unit): string {
+    if (unit.job === 'chocobo' || unit.monsterId === 'chocobo' || unit.unique === 'boco') return 'spr-bird'
+    if (unit.unique === 'ramza') return 'spr-hero'
+    if (unit.sex === 'female' && unit.side !== 'enemy') return 'spr-guest'
+    if (unit.side === 'player' || unit.side === 'guest') return 'spr-knight'
+    if (['wizard', 'priest', 'oracle', 'summoner', 'time-mage', 'lucavi'].includes(unit.job)) return 'spr-mage'
+    return 'spr-enemy'
+  }
+
+  private placeActor(unit: Unit, x: number, y: number, th: number, active: boolean, dark: boolean): void {
+    const key = this.textureFor(unit)
+    let actor = this.actors.get(unit.id)
+    if (!actor || actor.texture.key !== key) {
+      actor?.destroy()
+      actor = this.add.image(x, y, key).setOrigin(0.5, 1)
+      this.actors.set(unit.id, actor)
+    }
+    const bob = unit.dead ? 0 : Math.sin(this.time.now / 260 + unit.x * 1.7) * 1.5
+    const height = Math.max(64, th * 3.2)
+    actor.setVisible(!dark || !unit.dead)
+    actor.setPosition(x, y + bob)
+    actor.setScale(height / actor.height)
+    actor.setAlpha(unit.dead ? 0.4 : 1)
+    actor.setDepth(10 + y)
+    if (active) actor.setScale((height * 1.06) / actor.height)
+  }
+
+  private hideActors(keep?: Set<string>): void {
+    for (const [id, actor] of this.actors) {
+      if (!keep || !keep.has(id)) {
+        actor.destroy()
+        this.actors.delete(id)
+      }
     }
   }
 
@@ -135,15 +195,6 @@ export class BoardScene extends Phaser.Scene {
     this.gfx.lineTo(p.sx - tw / 2, p.sy + th / 2)
     this.gfx.closePath()
     this.gfx.strokePath()
-  }
-
-  private person(sx: number, sy: number, color: number): void {
-    this.gfx.fillStyle(0x1a120c, 1)
-    this.gfx.fillRect(sx - 7, sy - 2, 14, 5)
-    this.gfx.fillStyle(color, 1)
-    this.gfx.fillRect(sx - 5, sy - 18, 10, 16)
-    this.gfx.fillStyle(PARCHMENT, 1)
-    this.gfx.fillRect(sx - 4, sy - 26, 8, 8)
   }
 
   private pick(px: number, py: number): { x: number; y: number } | null {

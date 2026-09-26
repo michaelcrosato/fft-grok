@@ -1,4 +1,4 @@
-import { advanceClock, attackCommand, cast, commitTurn, forecast, moveUnit, reachable, undoMove, weaponRangeTiles, type Battle } from '../core/battle'
+import { advanceClock, attackCommand, cast, commitTurn, drinkStock, enemyTakeTurn, forecast, moveUnit, phoenixDown, reachable, undoMove, weaponRangeTiles, type Battle } from '../core/battle'
 import {
   absorbBattleLoot,
   availablePropositions,
@@ -40,13 +40,15 @@ let mode: Mode = 'title'
 let campaign: Campaign | null = null
 let battle: Battle | null = null
 let line = 0
-let aiming: 'move' | 'attack' | 'ability' = 'move'
+let aiming: 'move' | 'attack' | 'ability' | 'phoenix' = 'move'
 let abilityId: string | null = null
 let menu: 'root' | 'act' | 'abilities' = 'root'
 let returnMode: Mode = 'title'
 let pumpTimer = 0
 let lastPad = ''
 let shownTurn = ''
+let auto = false
+const notes: string[] = []
 
 export async function requestPresentationLock(): Promise<string> {
   const root = document.getElementById('app') ?? document.body
@@ -202,7 +204,7 @@ function shopCard(): HTMLElement {
   card.append(el('h1', '', 'Outfitter'))
   card.append(el('p', 'readout', `${campaign.gil} gil`))
   const list = el('div', 'menu-list')
-  for (const id of shopStock(campaign.chapter).slice(0, 40)) {
+  for (const id of shopStock(campaign.chapter)) {
     const item = ITEMS[id]
     if (!item) continue
     list.append(button(`${item.name} — ${item.price}`, () => {
@@ -395,15 +397,44 @@ function battleHud(): HTMLElement {
   const pad = el('div', 'pad')
   pad.append(cmdButton('▲', 'up', 'up'), cmdButton('◀', 'left', 'left'), cmdButton('▶', 'right', 'right'), cmdButton('▼', 'down', 'down'))
   const actions = el('div', 'row')
-  actions.append(cmdButton('Act', 'act'), cmdButton('Wait', 'wait'), cmdButton('Undo', 'undo'), cmdButton('Menu', 'menu'))
+  actions.append(cmdButton('Act', 'act'), cmdButton('Wait', 'wait'), cmdButton('Undo', 'undo'), button(auto ? 'Auto on' : 'Auto', () => {
+    auto = !auto
+    if (auto) schedulePump()
+    render()
+  }), cmdButton('Menu', 'menu'))
   const note = el('div', 'objective', battle?.objectiveText ?? '')
-  bottom.append(pad, actions, note)
+  const log = el('p', 'sub', notes.join(' · '))
+  log.id = 'battle-log'
+  bottom.append(pad, actions, note, log)
+  const state = document.createElement('div')
+  state.id = 'battle-state'
+  state.hidden = true
+  wrap.append(state)
   if (menu !== 'root' && battle) {
     const list = el('div', 'menu-list')
     list.style.pointerEvents = 'auto'
     const active = battle.units.find((unit) => unit.id === battle!.activeId)
     if (menu === 'act' && active) {
       list.append(button('Attack', () => { aiming = 'attack'; abilityId = null; menu = 'root'; refreshRange(); score.ui() }))
+      if ((battle.stock.potion ?? 0) > 0 || (battle.stock['hi-potion'] ?? 0) > 0 || (battle.stock['x-potion'] ?? 0) > 0) {
+        list.append(button('Drink', () => {
+          if (!drinkStock(battle!, active)) return
+          remember(`${active.name} drinks`)
+          commitTurn(battle!, active)
+          menu = 'root'
+          score.reward()
+          schedulePump()
+        }))
+      }
+      if ((battle.stock['phoenix-down'] ?? 0) > 0) {
+        list.append(button('Phoenix Down', () => {
+          aiming = 'phoenix'
+          abilityId = null
+          menu = 'root'
+          refreshRange()
+          score.ui()
+        }))
+      }
       for (const ability of (ABILITIES_BY_JOB[active.job] ?? []).concat(active.secondary ? ABILITIES_BY_JOB[active.secondary] ?? [] : [])) {
         if (ability.slot !== 'action' || !canExecute(active, ability.id)) continue
         list.append(button(ability.name, () => {
@@ -417,6 +448,7 @@ function battleHud(): HTMLElement {
     bottom.append(list)
   }
   wrap.append(top, bottom)
+  queueMicrotask(publishState)
   if (battle?.id === 'prologue-orbonne') {
     note.textContent = 'Blue tiles are movement. The ribbon is turn order. Side and back beat a shield\'s front. Move+Act spends 100. Wait spends 60. ' + (battle.objectiveText)
   }
@@ -435,6 +467,8 @@ function beginField(): void {
   mode = 'battle'
   menu = 'root'
   aiming = 'move'
+  auto = false
+  notes.length = 0
   stage.cursor = { x: battle.units[0]?.x ?? 1, y: battle.units[0]?.y ?? 1 }
   refreshRange()
   render()
@@ -465,6 +499,11 @@ function refreshRange(): void {
   if (aiming === 'ability' && abilityId) {
     stage.threat = weaponRangeTiles(battle, active).map((tile) => ({ x: tile.x, y: tile.y }))
   }
+  if (aiming === 'phoenix') {
+    stage.threat = battle.tiles
+      .filter((tile) => Math.abs(tile.x - active.x) + Math.abs(tile.y - active.y) <= 1)
+      .map((tile) => ({ x: tile.x, y: tile.y }))
+  }
 }
 
 function handle(command: Command): void {
@@ -486,6 +525,7 @@ function handle(command: Command): void {
   if (command === 'wait') {
     const active = battle.units.find((unit) => unit.id === battle!.activeId)
     if (active) {
+      remember(`${active.name} waits`)
       commitTurn(battle, active)
       score.ui()
       schedulePump()
@@ -496,6 +536,7 @@ function handle(command: Command): void {
   if (command === 'confirm') confirmTile(stage.cursor.x, stage.cursor.y)
   const readout = document.querySelector('.readout')
   if (readout) readout.textContent = `Tile ${colName(stage.cursor.x)}${stage.cursor.y + 1}`
+  publishState()
 }
 
 function confirmTile(x: number, y: number): void {
@@ -508,8 +549,10 @@ function confirmTile(x: number, y: number): void {
   if (aiming === 'move' && !active.moved) {
     if (moveUnit(battle, active, x, y)) {
       score.move()
+      remember(`${active.name} moved to ${x},${y}`)
       aiming = 'attack'
       refreshRange()
+      publishState()
       return
     }
   }
@@ -517,6 +560,7 @@ function confirmTile(x: number, y: number): void {
   if (aiming === 'attack' && target && target.side === 'enemy') {
     if (attackCommand(battle, active, target)) {
       score.hit()
+      remember(`${active.name} acts on ${target.name}`)
       commitTurn(battle, active)
       schedulePump()
       return
@@ -530,16 +574,33 @@ function confirmTile(x: number, y: number): void {
       schedulePump()
     }
   }
+  const fallen = battle.units.find((unit) => unit.x === x && unit.y === y && unit.dead && !unit.crystal)
+  if (aiming === 'phoenix' && fallen && phoenixDown(battle, active, fallen)) {
+    score.reward()
+    remember(`${active.name} uses a phoenix down on ${fallen.name}`)
+    commitTurn(battle, active)
+    schedulePump()
+  }
   stage.cursor = { x, y }
 }
 
 function schedulePump(): void {
   window.clearTimeout(pumpTimer)
-  const delay = campaign?.options.animSpeed === 4 ? 16 : campaign?.options.animSpeed === 3 ? 40 : campaign?.options.animSpeed === 2 ? 90 : 160
+  const speed = campaign?.options.animSpeed ?? 1
+  const delay = speed >= 4 ? 0 : speed === 3 ? 40 : speed === 2 ? 90 : 160
   const step = () => {
     if (!battle || mode !== 'battle') return
     if (battle.result) {
       finishBattle()
+      return
+    }
+    if (auto && battle.phase === 'input' && battle.activeId) {
+      const active = battle.units.find((unit) => unit.id === battle!.activeId)
+      if (active) {
+        enemyTakeTurn(battle, active)
+        remember(`${active.name} auto`)
+      }
+      pumpTimer = window.setTimeout(step, delay)
       return
     }
     if (battle.phase === 'input' && battle.activeId) {
@@ -561,8 +622,33 @@ function schedulePump(): void {
   pumpTimer = window.setTimeout(step, delay)
 }
 
+function remember(text: string): void {
+  notes.unshift(text)
+  if (notes.length > 8) notes.length = 8
+  const node = document.getElementById('battle-log')
+  if (node) node.textContent = notes.join(' · ')
+}
+
+function publishState(): void {
+  const node = document.getElementById('battle-state')
+  if (!node || !battle) return
+  const active = battle.units.find((unit) => unit.id === battle!.activeId)
+  node.dataset.phase = battle.phase
+  node.dataset.result = battle.result ?? ''
+  node.dataset.active = active?.name ?? ''
+  node.dataset.pos = active ? `${active.x},${active.y}` : ''
+  node.dataset.hp = String(active?.hp ?? '')
+  node.dataset.cursor = `${stage.cursor.x},${stage.cursor.y}`
+  node.dataset.range = stage.range.map((tile) => `${tile.x},${tile.y}`).join(' ')
+  node.dataset.foes = battle.units
+    .filter((unit) => unit.side === 'enemy' && !unit.crystal)
+    .map((unit) => `${unit.name}:${unit.x},${unit.y}:${unit.hp}:${unit.dead ? 1 : 0}`)
+    .join('|')
+}
+
 function finishBattle(): void {
   if (!battle || !campaign) return
+  auto = false
   absorbBattleLoot(campaign, battle)
   score.reward()
   if (battle.result === 'victory' && storyById(battle.id)) {
